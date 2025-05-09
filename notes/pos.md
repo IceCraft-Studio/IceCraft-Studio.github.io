@@ -40,18 +40,28 @@
 - Služba co automaticky přiřazuje IP adresy v síti.
 - Využívá se pro usnadnění práce - (není potřeba každému počítači přiřazovat IP adresu manuálně).
 - Některé počítače/IP adresy přiřazujeme manuálně, u některých je potřeba mít vždy stejnou IP adresu (služby, servery...).
-- Většinou zajištěna routerem v domácích sítích, ve složit2jších sítích bývá na dedikovaných serverech.
+- Většinou zajištěna routerem v domácích sítích, ve složitějších sítích bývá na dedikovaných serverech.
 
-# Síťové vrstvy
+# Síťové vrstvy - OSI Model
+
+1. Fyzická (Physical)
+2. Linková (Data-Link)
+3. Síťová (Network)
+4. Transportní (Transportation)
+5. Relační (Session)
+6. Prezentační (Presentation)
+7. Aplikační (Application)
 
 ## 1. Vrstva - Fyzická (Physical)
 
 - Vztahuje se na fyzický přenos dat v kabelech nebo bezdrátově.
 - Jednotka dat - **bit**
   - čistá data - nuly a jedničky
+  - 01101000011101000111010001110000011100110011101000101111001011110111001000101110011011010111010001100100011101100010111001101101011001010010111101101111011110000111010101010001011011000110001001010001011001010111011001011010
 
-### Přenosová média:
+### Přenosová média
 
+- **Pasivní prvky sítě**
 - **UTP (Unshielded Twisted Pair)** kabel:
   - využívá **elektrický proud** k přenosu dat
   - cenově nejefektivnější
@@ -59,6 +69,7 @@
 - **Optický (Optical)** kabel:
   - využívá **světlo** k přenosu dat
   - nejrychlejší a nejspolehlivější
+  - méně náchylný na elekromagnetické rušení, fyzicky ale křehčí
   - využívá se v podmořských kabelech k propojení světového internetu
   - half-duplex i **full-duplex** signál
 - **Wi-fi:**
@@ -66,7 +77,7 @@
   - bezdrátové připojení
   - pouze **half-duplex** signál
 - **Coaxiální kabel:**
-  - zastaralý, pomalý
+  - zastaralý, pomalý, multiplex
 - U kabelů je potřeba na velké vzdálenosti použíti **repeateru**(opakovače) nebo **amplifieru**(zesilovače), aby se neztratil signál.
 
 ### Druhy signálů
@@ -75,28 +86,38 @@
   - data mouhou proudit pouze jedním směrem
 - **Half-Duplex**
   - data mohou proudit oběma směry, ale pouze jedním směrem najednou
+  - CSMA/CD collision detection – detekce střetu
+  - CSMA/CA collision avoidance – vyhnutí střetu - **používanější**
 - **Full-Duplex**
   - data mohou proudit oběma směry nejednou
 - **Multiplex**
-  - data se posílají po několika kanálech najednou
+  - data se posílají po několika kanálech najednou (na více frekvencích)
 
-## 2. Vrstva - Linková (Data link)
+## 2. Vrstva - Linková (Data-Link)
 
 - Vztahuje se na přenos dat mezi zařízeními v síti.
 - Jednotka dat - **frame**
-  - obsahuje hlavičku s paketem
+  - obsahuje hlavičku s paketem
 - Síťová zařízení zde mají - **MAC adresy**
   - původně byly MAC adresy hardwarové, dnes se dají nastavit softwarově
   - př.: 01:23:45:67:89:ab
 
 ### Aktivní prvky
 
-- **switch**- na propojení zařízení v síti
+- **switch** - na propojení zařízení v síti
+- **přístupový bod (access point - AP**) - na připojení přes Wi-Fi
 - **NIC** **(network interface card)** - síťová karta v počítači
 
 ### Protokoly
 
 - **ARP (Address Resolution Protocol)** - přiřazuje IP adresy k MAC adresám
+
+### VLAN
+
+- Virtuální LAN fungující na linkové vrstvě.
+- Nastavuje se na switchi.
+- Počet zařízení je omezen počtem portů na switchi.
+- Používá se k segregaci zařízení ve stejné realné síti.
 
 ## 3. Vrstva - Síťová (Network)
 
@@ -119,13 +140,15 @@
 ### Druhy vysílání
 
 - **Broadcast** - Posílá všem zařízením.
+  - poslední adresa v síti(podsíti)
 - **Multicast** - Posílá vybraným zařízením hromadně.
 - **Unicast** - Posílá jednomu zařízení.
-- (Anycast - Posílá prvnímu zařízení, co to přijme.)
+- **Anycast** - Posílá prvnímu zařízení, které to přijme.
 
 ### IPv4
 
 - 32 bitové adresy - omezený počet, kterého bylo dosaženo.
+  - **2<sup>32</sup>** - cca 4 miliardy
 - Dělí se na **Soukromé** (private) (př.: 192.168.0.1) a **Veřejné** (public) (př.: 142.251.214.142)
   - Soukromé jsou specifické pro zařízení v LAN (místní síti).
   - Veřejné se používají ve WAN (široké síti) ke směrování dat - jsou to IP adresy routerů.
@@ -136,7 +159,7 @@
 
 ### IPv6
 
-- 128 bitové adresy - prakticky neomezené.
+- 128 bitové adresy - počtem prakticky neomezené.
 - např.: **2001:0db8:85a3:08d3:1319:8a2e:0370:7334**
 - Dělí se na lokální a globální.
   - Local: **fe80**:xxxx:...
@@ -221,20 +244,46 @@ např.:
 
 ### AS - Autonomní systém
 
+- spravované operátory, big tech spoleečnostmi apod.
 - např.: Deutsch Telekom - Evropský
-- největší - "Páteř internetu"
+- největší jsou "Páteř internetu"
 
 ### Směrovací protokoly
 
 - **BGP** - protokol pro komunikaci mezi AS
 - **OSPF** - open shortest path first - pro komunikaci uvnitř AS
 - Transit vs Peering - přenos dat mezi AS (placený vs free)
+- Postup směrování:
+  - LAN – router – router operátora – peering centrum
 
-## (4.) Transportní vrstva
+### Aktivní prvky
+
+- **Router** - na propojení sítí navzájem a směrování toku dat
+  - adreesa routeru je **Default Gateway** při konfiguraci IP na zařízeních
+- **Hub** - zastaralý, posílá všechno všem
+
+### Topologie Sítí
+
+- Star
+- Bus
+  - špatná topologie - všechna zařízení mají 1 linku, kde se mohou navzájem odposlouchávat
+- Ring
+- Tree
+- Mesh
+  - vetšinou částečně propojený, lze i plně propojený
+- Line
+- [Diagram Topologií](https://spstrebesin-my.sharepoint.com/:i:/g/personal/dobias121_trebesin_cz/EXAOGO7a3HhJkZAn4rT4pxQB1wStiKBw828TlavsJ_j4Hg?e=D4vZBf)
+
+## 4. Vrstva - Transportní (Transport)
+
+- Jednotka dat - **segment**
+- Zajišťuje, že se potřebná data spolehlivě přenesou mezi koncovými zařízeními.
+- Vrstva, na které se zařizují síťové **porty**.
 
 ### Protokoly
 
 - **TCP** - spolehlivější (potvrzení přijetí), ale pomalejší
+  - používá se na většině
 - **UDP** - méně spolehlivý, ale rychlejší (použítí na streamy, hry atd.)
 
 ### **TLS** - Transport Layer Security
@@ -252,3 +301,154 @@ např.:
 - **MSS** - Maximum segment size - maximální velikost segmentu (packet bez hlaviček)
 - **Fragmentace** - Dělení packetů na menší kousky, aby byly schopné proudit přes linky i s nižšími limity.
 - **Jumbo frame** - umožňuje mít podstatně větší limit MTU, používá se např. při testování.
+
+## 5. Vrstva - Relační (Session)
+
+- Vrstva pro **ověřování**(authentikaci), **udělování přístupu**(autorizaci) a **udržování spojení** v relacích(session).
+
+## 6. Vrstva - Prezentační (Presentation)
+
+- Vrstva pro **šifrovaní**, **kompresy** a **dekódování**.
+
+## 7. Vrstva - Aplikační (Application)
+
+- Vrstva pro aplikace v sítích a jejich **protokoly**.
+- web, discord, sdílení souborů, e-mail atd.
+- Protokoly např.:
+  - **HTTP** - HyperText Transfer Protocol - port **80**
+  - **HTTPS** - HTTP Secure - port **443**
+  - **FTP** - File Transfer Protocol - port **21**
+  - **SMTP** - Simple Mail Tranfer Protocol - port **25**
+
+### Email
+
+- [Diagram Komunikace Na Excalidraw](https://excalidraw.com/#json=rKo0ce0mUEBMauJUu03-4,mK_i1nJnwvFp0-rQp0IgQQ)
+
+### Malware
+
+- Trojan - na první pohled dělá co má, ve skutečnosti škodí.
+- Keylogger
+  - Zaznamenává vstupy (zejména klávsnici) uživatele bez jeho vědomí za účelem získání citlivých dat.
+- Backdoor
+  - "Zadní vrátka"
+  - reverse shell - neoprávněný přístup k privilegovanému shellu (příkazový řádek) zařízení
+- Virus - šíří se mezi zařízeními
+- Phishing - snaha získání přístupových údajů tím, že se prezentuje jako legitimní stránka/osoba
+- Ransomware - zašifruje data a dožaduje výkupné
+
+### Instant Messaging
+
+- Discord, Whatsapp, Instagram DMs
+- Signal - bezpečný
+- E2EE - End 2 End Encryption
+  - koncové šifrování
+  - data mohou přečíst pouze mezi sebou
+
+## TCP/IP
+
+- Způsob modelování síťových vrstev v praxi.
+  1. Rozhraní (OSI - 1. Fyzická a 2. Linková)
+  2. Síťová
+  3. Transportní
+  4. Aplikační (OSI - 5. Relační, 6. Prezentační a 7. Aplikační)
+
+### Enkapsulace dat
+
+- Návaznost dat na různých vrstvách TCP/IP modelu:
+  - L5 Aplikační - **Data**
+  - L4 Transportní - **segment = Hlavička (TCP/UDP) + zbytek**
+  - L3 Síťová - **packet = IP + zbytek**
+  - L2 Linková (Rozhraní) - **frame = MAC + zbytek**
+  - L1 Fyzická - bity
+- [Diagram pro představu](https://spstrebesin-my.sharepoint.com/personal/dobias121_trebesin_cz/_layouts/15/embed.aspx?UniqueId=92a894fe-15bc-4b47-a0a7-3d8f78bc53d5)
+
+## P2P - Peer-to-Peer
+
+- Distribuovaná síť, kde má každé zúčastněné zařízení stejná oprávnění.
+  - Rozdíl oproti klasické architektuře klient-server, kde má server vždy vyšší autoritu. Zařízení tak poskytuje i požaduje zároveň.
+- Zařízení = **Node** (uzel)
+- Často se využívá k efektivnímu sdílení souborů.
+  - **Torrent** funguje jako decentralizovaná síť zařízení, kde každé posílá růzé kousky dat patřících do jednoho celku.
+  - **Workgroups** je způsob sdílení souborů v Windows, který používá SMB a zajišťuje tak možnost jednoduše sdílet složky mezi počítači, soubory do tiskáren apod.
+  - **Samba** - sdílení souborů mezi Windows a Linux
+
+## VPN - Virtual Private Network
+
+- Služba umožňující soukromý přístup k internetu za pomocí kombinace proxy a šifrovaní.
+- Proxy => výsledná veřejná IP adresa je odlišná
+- Spousta různých poskytovatelů - NordVPN, Mullvad VPN, Proton VPN
+- VPN zadarmo často může znamenat, že si vydělávají na datech uživatelů (loggování)
+- Pomocí VPN se dá obejít geoblocking - použitím VPN serveru v zemi, kde obsah není blokován.
+- ISP nemůže přímo nahlížet do komunikace, ale může stále vidět DNS požadavky, na to je potřeba separátní nastavení.
+
+## Bezdrátové sítě
+
+### Frekvenční pásma
+
+- **Licenční**
+  - určeno a hlídáno **ČTÚ** (Českým Telekomunikačním Úřadem)
+  - je zapotřebí licence na vysílání signálu
+  - Např.: DVB-T2 (TV), Rádio, Telefon
+- **Bezlicenční**
+  - dají se používat bez licenčních omezení
+  - Např.: Mikrovlnka, Vysílačky, Wi-Fi
+
+### WLAN - Wireless LAN
+
+- Bezdrátová síť Wi-Fi
+- Zapezpeční pomocí hesla
+  - **WPA 2** - starší, minimum
+  - **WPA 3** - lepší
+  - šifrováno pomocí **AES**
+- dělení dle frekvence
+  - **2.4Ghz**
+    - delší dosah, méně přerušení přes zdi
+    - menší rychlost
+    - málo dostupných kanálů - hodně překrývání
+      - kanály **1,6,11** jsou jediné, co se vzájemně nepřekrývají
+  - **5Ghz**
+    - kratší dosah, více rušení přes zdi
+    - vyšší rychlost
+  - **6Ghz**
+    - nejnovější, málo používaný
+    - nejvyšší rychlost, nejkratší dosah
+    - Wi-Fi generace 6 a výše
+- používá **half-duplex** signál
+  - **CSMA – CA** na zamezení přerušování
+- **SSID** - název sítě Wi-Fi
+
+### IoT Bezdrát
+
+- **LoRa** a **Sigfox 0G**
+  - technologie bezdrátových sítí pro zařízení IoT
+  - menší spotřeba energie
+  - pásmo **<1Ghz**
+  - operátoři po celém světě (např. LoRa - Amazon)
+
+## Cloud
+
+- *"Someone else's computer"*
+- Služby poskytované prostřednictvím internetu online.
+- **Hosting**
+  - poskytování výpočetních prostředků na internetu za poplatek
+  - největší poskytovetelé:
+    - **Amazon** - **AWS** (Amazon Web Services)
+    - **Microsoft** - **Azure**
+    - Google - Google Cloud
+  - výhody:
+    - silné výchozí zabezpečení
+    - pokrytí serverů a datacenter po celém světě
+    - výhodná cena
+    - snazší údržba
+  - nevýhody:
+    - cizí počítač - nemáme nad ním plnou moc
+      - potenciální bezpečnostní rizika
+    - cena určená poskytovatelem
+- Služby pro uživatele
+  - Cloud Gaming - NVIDIA, XBOX
+  - AI Assistenti - ChatGPT, Cloud
+  - Email - Gmail, Outlook
+  - Vyhledávače - Google, DuckDuckGo
+  - Úložiště Souborů - Google Drive, OneDrive, Mega
+  - a mnoho dalších
+
