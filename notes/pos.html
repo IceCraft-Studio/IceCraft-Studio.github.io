@@ -1,0 +1,341 @@
+<html>
+    <head>
+        <style>
+body { background-color: #121212; color: #eaeaea; font-family: "Segoe UI", Tahoma, sans-serif; margin: 0; padding: 2em; line-height: 1.6; }
+
+h1, h2, h3 { margin: 1em 0 0.5em; font-weight: 600; }
+
+h1 { font-size: 2rem; color: #ffffff; }
+
+h2 { font-size: 1.75rem; color: #ffffff; text-decoration: underline; }
+
+h3 { font-size: 1.5rem; color: #ffffff; }
+
+ul { margin-bottom: 1em; padding-left: 1.5em; list-style-type: disc; }
+
+ul ul { list-style-type: circle; margin-bottom: 0; }
+
+ul ul ul { list-style-type: square; }
+
+strong { font-weight: 700; }
+
+em { font-style: italic; }
+          </style>
+    </head>
+    <body>
+
+<h1 id="dns">DNS</h1>
+<ul>
+<li>Služba co převádí domény na IP adresy.</li>
+<li>Můžeme mít vlastní v síti pro vnitřní potřeby a nebo použít globální pro domény mimo vnitřní síť.</li>
+<li>(v testu bude chtít i postup nastavení ve Windows Serveru GUI).</li>
+<li>Cache se používá pro urychlení zjištění adresy, aby nebylo třeba projít celým postupem zbytečně mnohokrát.</li>
+<li>Postup zjištění DNS:<ul>
+<li><strong>PC</strong> (Cache) -&gt;</li>
+<li><strong>ISP</strong> - Resolver (Cache) -&gt;</li>
+<li><strong>DNS</strong> -&gt;<ol>
+<li><strong>Root</strong> (.com,.cz)</li>
+<li><strong>TLD</strong> (google.com, seznam.cz) - ví kdo to ví</li>
+<li><strong>Authoritative DNS Server</strong> - ten ví</li>
+</ol>
+</li>
+<li>PC &lt;-</li>
+</ul>
+</li>
+</ul>
+<h2 id="-rovn-dom-n">Úrovně domén</h2>
+<ul>
+<li><strong>Root(.)</strong> - tečka na konci (která se nepíše) - pramen všech domén.</li>
+<li><strong>1. řádu</strong> - Domény udržují správci domén a dávají možnost registrátorům poskytovat jej. TLD (Top Level Domain) (<strong>.com</strong>, <strong>.cz</strong>)</li>
+<li><strong>2. řádu</strong> - Doménu poskytuje webům registrátor. (<strong>google</strong>.com, <strong>seznam</strong>.cz)</li>
+<li><strong>3. řádu</strong> - Doména se vytváří v rámci webů. (<strong>www</strong>.google.com, <strong>jidelna</strong>.trebesin.cz)</li>
+<li>Př.: správce domény .cz - <strong>CZ.NIC</strong></li>
+</ul>
+<h2 id="typy-z-znam-dom-n">Typy záznamů domén</h2>
+<ul>
+<li><strong>A</strong> - doména -&gt; IPv4 adresa</li>
+<li><strong>AAAA</strong> - doména -&gt; IPv6 adresa</li>
+<li><strong>CNAME</strong> - spojení více domén (alias)</li>
+<li><strong>PTR</strong> - reversní záznam - IP adresa -&gt; doména</li>
+<li>další: NS, TTL, DS, MX, TXT atd.</li>
+</ul>
+<h2 id="ostatn-info">Ostatní info</h2>
+<ul>
+<li><strong>DNSSEC</strong> - ochrana domén před zfalšováním pomocí digitálního podpisu</li>
+<li><strong>whois</strong> - služba zpětného vyhledávání domény v registru, dají se najít informace např.: kde/kdo ji registroval, u koho byla registrována atd.</li>
+<li><strong>nslookup/dig (WIN/LINUX)</strong> - příkazy pro zjištění DNS záznamů</li>
+</ul>
+<h1 id="dhcp">DHCP</h1>
+<ul>
+<li>Služba co automaticky přiřazuje IP adresy v síti.</li>
+<li>Využívá se pro usnadnění práce - (není potřeba každému počítači přiřazovat IP adresu manuálně).</li>
+<li>Některé počítače/IP adresy přiřazujeme manuálně, u některých je potřeba mít vždy stejnou IP adresu (služby, servery...).</li>
+<li>Většinou zajištěna routerem v domácích sítích, ve složit2jších sítích bývá na dedikovaných serverech.</li>
+</ul>
+<h1 id="s-ov-vrstvy">Síťové vrstvy</h1>
+<h2 id="1-vrstva-fyzick-physical-">1. Vrstva - Fyzická (Physical)</h2>
+<ul>
+<li>Vztahuje se na fyzický přenos dat v kabelech nebo bezdrátově.</li>
+<li>Jednotka dat - <strong>bit</strong><ul>
+<li>čistá data - nuly a jedničky</li>
+</ul>
+</li>
+</ul>
+<h3 id="p-enosov-m-dia-">Přenosová média:</h3>
+<ul>
+<li><strong>UTP (Unshielded Twisted Pair)</strong> kabel:<ul>
+<li>využívá <strong>elektrický proud</strong> k přenosu dat</li>
+<li>cenově nejefektivnější</li>
+<li><strong>full-duplex</strong> signál</li>
+</ul>
+</li>
+<li><strong>Optický (Optical)</strong> kabel:<ul>
+<li>využívá <strong>světlo</strong> k přenosu dat</li>
+<li>nejrychlejší a nejspolehlivější</li>
+<li>využívá se v podmořských kabelech k propojení světového internetu</li>
+<li>half-duplex i <strong>full-duplex</strong> signál</li>
+</ul>
+</li>
+<li><strong>Wi-fi:</strong><ul>
+<li>využívá <strong>elektromagnetické vlny</strong> k přenosu dat</li>
+<li>bezdrátové připojení</li>
+<li>pouze <strong>half-duplex</strong> signál</li>
+</ul>
+</li>
+<li><strong>Coaxiální kabel:</strong><ul>
+<li>zastaralý, pomalý</li>
+</ul>
+</li>
+<li>U kabelů je potřeba na velké vzdálenosti použíti <strong>repeateru</strong>(opakovače) nebo <strong>amplifieru</strong>(zesilovače), aby se neztratil signál.</li>
+</ul>
+<h3 id="druhy-sign-l-">Druhy signálů</h3>
+<ul>
+<li><strong>Simplex</strong><ul>
+<li>data mouhou proudit pouze jedním směrem</li>
+</ul>
+</li>
+<li><strong>Half-Duplex</strong><ul>
+<li>data mohou proudit oběma směry, ale pouze jedním směrem najednou</li>
+</ul>
+</li>
+<li><strong>Full-Duplex</strong><ul>
+<li>data mohou proudit oběma směry nejednou</li>
+</ul>
+</li>
+<li><strong>Multiplex</strong><ul>
+<li>data se posílají po několika kanálech najednou</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-vrstva-linkov-data-link-">2. Vrstva - Linková (Data link)</h2>
+<ul>
+<li>Vztahuje se na přenos dat mezi zařízeními v síti.</li>
+<li>Jednotka dat - <strong>frame</strong>
+  - obsahuje hlavičku s paketem</li>
+<li>Síťová zařízení zde mají - <strong>MAC adresy</strong><ul>
+<li>původně byly MAC adresy hardwarové, dnes se dají nastavit softwarově</li>
+<li>př.: 01:23:45:67:89:ab</li>
+</ul>
+</li>
+</ul>
+<h3 id="aktivn-prvky">Aktivní prvky</h3>
+<ul>
+<li><strong>switch</strong>- na propojení zařízení v síti</li>
+<li><strong>NIC</strong> <strong>(network interface card)</strong> - síťová karta v počítači</li>
+</ul>
+<h3 id="protokoly">Protokoly</h3>
+<ul>
+<li><strong>ARP (Address Resolution Protocol)</strong> - přiřazuje IP adresy k MAC adresám</li>
+</ul>
+<h2 id="3-vrstva-s-ov-network-">3. Vrstva - Síťová (Network)</h2>
+<ul>
+<li>Jednotka dat - <strong>packet</strong></li>
+<li><strong>LAN</strong> - Local Area Network<ul>
+<li>Místní síť</li>
+<li>Využívá soukromých (lokálních) adres</li>
+<li>např.: domácí síť, školní síť</li>
+</ul>
+</li>
+<li><strong>WAN</strong> - Wide Area Network<ul>
+<li>Širší sít</li>
+<li>Využívá veřejných (globálních) adres</li>
+<li><strong>Internet</strong></li>
+</ul>
+</li>
+<li><strong>MAN</strong> - Metropolitan Area Network<ul>
+<li>Metropolní síť (na úrovni většího města)</li>
+</ul>
+</li>
+<li><strong>Localhost</strong><ul>
+<li>Adresa použitá na připojení zařízení samo na sebe.</li>
+<li>IPv4: <strong>127.0.0.1</strong></li>
+<li>IPv6: <strong>::1</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="druhy-vys-l-n-">Druhy vysílání</h3>
+<ul>
+<li><strong>Broadcast</strong> - Posílá všem zařízením.</li>
+<li><strong>Multicast</strong> - Posílá vybraným zařízením hromadně.</li>
+<li><strong>Unicast</strong> - Posílá jednomu zařízení.</li>
+<li>(Anycast - Posílá prvnímu zařízení, co to přijme.)</li>
+</ul>
+<h3 id="ipv4">IPv4</h3>
+<ul>
+<li>32 bitové adresy - omezený počet, kterého bylo dosaženo.</li>
+<li>Dělí se na <strong>Soukromé</strong> (private) (př.: 192.168.0.1) a <strong>Veřejné</strong> (public) (př.: 142.251.214.142)<ul>
+<li>Soukromé jsou specifické pro zařízení v LAN (místní síti).</li>
+<li>Veřejné se používají ve WAN (široké síti) ke směrování dat - jsou to IP adresy routerů.</li>
+</ul>
+</li>
+<li>Soukromé adresy:<ul>
+<li><strong>192.168</strong>.x.x (<strong>192.168.0.0/16</strong>)</li>
+<li><strong>10</strong>.x.x.x (<strong>10.0.0.0/8</strong>)</li>
+<li><strong>172.16-31</strong>.x.x (<strong>172.16.0.0/12</strong>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="ipv6">IPv6</h3>
+<ul>
+<li>128 bitové adresy - prakticky neomezené.</li>
+<li>např.: <strong>2001:0db8:85a3:08d3:1319:8a2e:0370:7334</strong></li>
+<li>Dělí se na lokální a globální.<ul>
+<li>Local: <strong>fe80</strong>:xxxx:...</li>
+<li>Global: <strong>2001</strong>:xxxx:...</li>
+</ul>
+</li>
+</ul>
+<h3 id="pods-">Podsíť</h3>
+<ul>
+<li>Způsob vytváření 1 nebo více podsítí, které o sobě neví a nemohou spolu komunikovat.</li>
+<li>Daná podsíť má rozsah, který určuje maska sítě.</li>
+<li>První adresa v rozsahu vždy určuje adresu pro celou síť a poslední multicast(posílání všem) adresu.</li>
+<li>např.: v rozsahu 10.2.0.0-10.2.0.127 je adresa sítě 10.2.0.0 a multicast adresa 10.2.0.127</li>
+<li>Tudíž je v podsíti pro zařízení volných adres o 2 míň než je rozsah, v tomto případě 126.</li>
+</ul>
+<h3 id="maska-s-t-">Maska sítě</h3>
+<ul>
+<li>Určuje počet rozsahů v podsíti.</li>
+<li>Zapisuje se jako IP adresa, s tím že každá složka značí, jaké jsou rozsahy v dané části adresy.</li>
+<li>např: <strong>255.255.128.0</strong></li>
+<li>příklady významu složky.:<ul>
+<li>0 - dá se zapsat jakékoliv číslo</li>
+<li>255 - nedá se změnit, je to daná složka adresy sítě</li>
+<li>254 - dají se zapsat 2 hodnoty, 0 nebo 1, 128 rozsahů</li>
+<li>128 - dá se zapsat 128 hodnot, 2 rozsahy (0-127, 128-255)</li>
+</ul>
+</li>
+<li>Za lomítkem u IP adresy se zapisuje zkrácený zápis masky.
+např.:<ul>
+<li><code>IP - maska</code> (zkrácený zápis)</li>
+<li><code>10.x.x.x - 255.0.0.0</code> (10.10.10.15/<strong>8</strong>)</li>
+<li><code>192.168.0.x - 255.255.255.0</code> (192.168.0.12/<strong>24</strong>)</li>
+<li><code>192.168.0.0-127 - 255.255.255.128</code> (192.168.0.120/<strong>25</strong>)</li>
+<li><code>172.20.x.x - 255.255.0.0</code> (172.20.3.5/<strong>16</strong>)</li>
+</ul>
+</li>
+<li>Způsob počítání čísla zkráceného zápisu:<ul>
+<li>Každé zvýšení čísla o 1 značí jeden bit v binárním zápise masky sítě. 255 je 8 bitů, takže jedna složka 255 zvýší masku sítě o 8.</li>
+<li>Pro čísla <code>&lt; 255</code> - což může být pouze poslední složka masky co je <code>&gt; 0</code>, se musí číslo rozložit do binárního tvaru. Počet 1 za sebou v binárním tvaru se přičte k masce.</li>
+<li>Např. pro číslo 192 je to <code>**11**00 0000</code>, což je <strong>+2</strong>. Takže 255.255.192.0 bude <code>8 + 8 + 2 = **18**</code> . 255 = 8 bitů, 192 = 2 bity</li>
+</ul>
+</li>
+<li>Zjištění rozsahů sítě:<ul>
+<li>Počet adres v 1 rozsahu (včetně rezervovaných) se dá zjistit tímto výpočtem: <code>256 - maska</code></li>
+<li>Počet rozsahů se dá zjisti jako <code>256 / počet adres</code>.</li>
+<li>Rozsahy začínají v 0, takže konec prvního rozsahu je vždy o 1 menší než počet adres.</li>
+<li>Začátek dalšího rozsahu je konec předešlého <strong>+1</strong></li>
+<li>Konec dalšího rozsahu se dá vypočítat přičtením počtu adres ke konci předešlého rozsahu.</li>
+</ul>
+</li>
+<li>Příklad:<ul>
+<li>Mějme masku 255.255.255.<strong>128</strong>, zkrácený zápis: /<strong>25</strong></li>
+<li>128 je binárně 1000 0000, tudíž <code>24 + 1 = 25</code></li>
+<li>Počet adres v 1 rozsahu je <code>256 - 128 = 128</code></li>
+<li>Počet rozsahů je <code>256 / 128 = 2</code></li>
+<li>Rozsahy jsou <code>0-127</code>, <code>128-255</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="porty">Porty</h3>
+<ul>
+<li><strong>0-1024</strong> = systémové</li>
+<li><strong>1025-49151</strong> = registrované</li>
+<li><strong>49152-65535</strong> = ephemeral (dynamické)<ul>
+<li>používají se s <strong>PNAT</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="p-evody-adres">Převody adres</h3>
+<ul>
+<li><strong>ARP</strong> (Address Resolution Protocol) = IP &lt;=&gt; MAC</li>
+<li><strong>NAT</strong> (Network Address Table) = Public IPv4 &lt;=&gt; Private IPv4</li>
+<li><strong>SNAT</strong> = statická NAT<ul>
+<li>82.142.64.242 &lt;=&gt; 172.22.11.150</li>
+<li>82.142.64.243 &lt;=&gt; 172.22.11.152</li>
+<li>každý počítač má svoji lokální a veřejnou adresu která je pevně daná</li>
+</ul>
+</li>
+<li><strong>DNAT</strong> = dynamická NAT<ul>
+<li>LAN: 172.22.11.150-153</li>
+<li>WAN: 82.142.64.243, 82.142.64.244</li>
+<li>počítač si vybere dynamicky jakou adresou bude komunikovat a tu si pro sebe zabere z rozsahu(pool) dostupných veřejných adres</li>
+</ul>
+</li>
+<li><strong>PAT</strong> = port address table  <ul>
+<li>počítači bude vygenerován port pro komunikaci, takže všechny počítače mohou komunikovat pod jednou adresou</li>
+<li>172.22.11.150 &lt;=&gt; 82.142.64.242:50001</li>
+<li>172.22.11.151 &lt;=&gt; 82.142.64.242:58934</li>
+<li>172.22.11.152 &lt;=&gt; 82.142.64.242:61000</li>
+<li>172.22.11.153 &lt;=&gt; 82.142.64.242:62543</li>
+</ul>
+</li>
+</ul>
+<h3 id="port-forwarding">Port Forwarding</h3>
+<ul>
+<li>staticky přiřadí počítači jeden daný port pro přesměrování vší komunikace na daném portu</li>
+</ul>
+<h3 id="p-i-azov-n-adres">Přiřazování adres</h3>
+<ul>
+<li>světově - ICANN + IANA</li>
+<li>regionálně - RIR (např. RIPE NNC - Evropa, ARIN - Amerika)</li>
+</ul>
+<h3 id="as-autonomn-syst-m">AS - Autonomní systém</h3>
+<ul>
+<li>např.: Deutsch Telekom - Evropský</li>
+<li>největší - &quot;Páteř internetu&quot;</li>
+</ul>
+<h3 id="sm-rovac-protokoly">Směrovací protokoly</h3>
+<ul>
+<li><strong>BGP</strong> - protokol pro komunikaci mezi AS</li>
+<li><strong>OSPF</strong> - open shortest path first - pro komunikaci uvnitř AS</li>
+<li>Transit vs Peering - přenos dat mezi AS (placený vs free)</li>
+</ul>
+<h2 id="-4-transportn-vrstva">(4.) Transportní vrstva</h2>
+<h3 id="protokoly">Protokoly</h3>
+<ul>
+<li><strong>TCP</strong> - spolehlivější (potvrzení přijetí), ale pomalejší</li>
+<li><strong>UDP</strong> - méně spolehlivý, ale rychlejší (použítí na streamy, hry atd.)</li>
+</ul>
+<h3 id="-tls-transport-layer-security"><strong>TLS</strong> - Transport Layer Security</h3>
+<ul>
+<li>kryptografický protokol (SSL je jeho předchůdce)</li>
+<li><strong>TCP 3-way handshake</strong> - zahájení spojení u TCP:<ul>
+<li>C - Client, S - Server</li>
+<li>C ---&gt; S - <strong>SYN</strong> (pozdrav)</li>
+<li>C &lt;--- S - <strong>SYN-ACK</strong>  (pozdrav zpátky)</li>
+<li>C ---&gt; S - <strong>ACK</strong> (potvrzení pozdravu zpátky)</li>
+</ul>
+</li>
+</ul>
+<h3 id="dal-pojmy">Další pojmy</h3>
+<ul>
+<li><strong>MTU</strong> - Maximum transmission unit - 1,5 kB Maximální velikost packetu (segment + hlavičky)</li>
+<li><strong>MSS</strong> - Maximum segment size - maximální velikost segmentu (packet bez hlaviček)</li>
+<li><strong>Fragmentace</strong> - Dělení packetů na menší kousky, aby byly schopné proudit přes linky i s nižšími limity.</li>
+<li><strong>Jumbo frame</strong> - umožňuje mít podstatně větší limit MTU, používá se např. při testování.</li>
+</ul>
+
+
+    </body>
+</html>
