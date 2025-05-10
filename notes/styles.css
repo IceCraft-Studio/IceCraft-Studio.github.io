@@ -1,0 +1,23 @@
+body { background-color: #121212; color: #eaeaea; font-family: "Segoe UI", Tahoma, sans-serif; margin: 0; padding: 2em; line-height: 1.6; }
+
+h1, h2, h3 { margin: 1em 0 0.5em; font-weight: 600; }
+
+h1 { font-size: 2rem; color: #ffffff; }
+
+h2 { font-size: 1.75rem; color: #ffffff; text-decoration: underline; }
+
+h3 { font-size: 1.5rem; color: #ffffff; }
+
+ul { margin-bottom: 1em; padding-left: 1.5em; list-style-type: disc; }
+
+ul ul { list-style-type: circle; margin-bottom: 0; }
+
+ul ul ul { list-style-type: square; }
+
+strong { font-weight: 700; }
+
+em { font-style: italic; }
+
+a {color:rgb(55, 192, 255)}
+
+a:visited {color:rgb(182, 72, 255)}
