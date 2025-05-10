@@ -1,4 +1,11 @@
-# DNS
+
+# Počítačové Sítě - POS
+
+**Tento dokument nikterak nezaručuje stoprocentní pokrytí veškerého učiva nutného ke složení maturitní zkoušky, individuální přezkoumání každé maturitní otázky zvlášť a dohledání případně chybějících informací JE DOPORUČENO! Tvůrce dokumentu není zodpovědný za případné psychické, fyzické, duševní, či materiální škody způsobené nedbalou přípravou na maturitní zkoušku. 🐸🐸**
+
+- ***Odkazy na další materiály můžete naleznout v souboru ZDROJE K OTÁZKÁM.***
+
+## DNS
 
 - Služba co převádí domény na IP adresy.
 - Můžeme mít vlastní v síti pro vnitřní potřeby a nebo použít globální pro domény mimo vnitřní síť.
@@ -13,7 +20,7 @@
     3. **Authoritative DNS Server** - ten ví
   - PC <-
 
-## Úrovně domén
+### Úrovně domén
 
 - **Root(.)** - tečka na konci (která se nepíše) - pramen všech domén.
 - **1\. řádu** - Domény udržují správci domén a dávají možnost registrátorům poskytovat jej. TLD (Top Level Domain) (**.com**, **.cz**)
@@ -21,7 +28,7 @@
 - **3\. řádu** - Doména se vytváří v rámci webů. (**www**.google.com, **jidelna**.trebesin.cz)
 - Př.: správce domény .cz - **CZ.NIC**
 
-## Typy záznamů domén
+### Typy záznamů domén
 
 - **A** - doména -> IPv4 adresa
 - **AAAA** - doména -> IPv6 adresa
@@ -29,20 +36,20 @@
 - **PTR** - reversní záznam - IP adresa -> doména
 - další: NS, TTL, DS, MX, TXT atd.
 
-## Ostatní info
+### Ostatní info
 
 - **DNSSEC** - ochrana domén před zfalšováním pomocí digitálního podpisu
 - **whois** - služba zpětného vyhledávání domény v registru, dají se najít informace např.: kde/kdo ji registroval, u koho byla registrována atd.
 - **nslookup/dig (WIN/LINUX)** - příkazy pro zjištění DNS záznamů
 
-# DHCP
+## DHCP
 
 - Služba co automaticky přiřazuje IP adresy v síti.
 - Využívá se pro usnadnění práce - (není potřeba každému počítači přiřazovat IP adresu manuálně).
 - Některé počítače/IP adresy přiřazujeme manuálně, u některých je potřeba mít vždy stejnou IP adresu (služby, servery...).
 - Většinou zajištěna routerem v domácích sítích, ve složitějších sítích bývá na dedikovaných serverech.
 
-# Síťové vrstvy - OSI Model
+## Síťové vrstvy - OSI Model
 
 1. Fyzická (Physical)
 2. Linková (Data-Link)
@@ -52,14 +59,14 @@
 6. Prezentační (Presentation)
 7. Aplikační (Application)
 
-## 1. Vrstva - Fyzická (Physical)
+### 1. Vrstva - Fyzická (Physical)
 
 - Vztahuje se na fyzický přenos dat v kabelech nebo bezdrátově.
 - Jednotka dat - **bit**
   - čistá data - nuly a jedničky
   - 01101000011101000111010001110000011100110011101000101111001011110111001000101110011011010111010001100100011101100010111001101101011001010010111101101111011110000111010101010001011011000110001001010001011001010111011001011010
 
-### Přenosová média
+#### Přenosová média
 
 - **Pasivní prvky sítě**
 - **UTP (Unshielded Twisted Pair)** kabel:
@@ -80,7 +87,7 @@
   - zastaralý, pomalý, multiplex
 - U kabelů je potřeba na velké vzdálenosti použíti **repeateru**(opakovače) nebo **amplifieru**(zesilovače), aby se neztratil signál.
 
-### Druhy signálů
+#### Druhy signálů
 
 - **Simplex**
   - data mouhou proudit pouze jedním směrem
@@ -93,7 +100,7 @@
 - **Multiplex**
   - data se posílají po několika kanálech najednou (na více frekvencích)
 
-## 2. Vrstva - Linková (Data-Link)
+### 2. Vrstva - Linková (Data-Link)
 
 - Vztahuje se na přenos dat mezi zařízeními v síti.
 - Jednotka dat - **frame**
@@ -102,24 +109,24 @@
   - původně byly MAC adresy hardwarové, dnes se dají nastavit softwarově
   - př.: 01:23:45:67:89:ab
 
-### Aktivní prvky
+#### Aktivní prvky
 
 - **switch** - na propojení zařízení v síti
 - **přístupový bod (access point - AP**) - na připojení přes Wi-Fi
 - **NIC** **(network interface card)** - síťová karta v počítači
 
-### Protokoly
+#### Protokoly
 
 - **ARP (Address Resolution Protocol)** - přiřazuje IP adresy k MAC adresám
 
-### VLAN
+#### VLAN
 
 - Virtuální LAN fungující na linkové vrstvě.
 - Nastavuje se na switchi.
 - Počet zařízení je omezen počtem portů na switchi.
 - Používá se k segregaci zařízení ve stejné realné síti.
 
-## 3. Vrstva - Síťová (Network)
+### 3. Vrstva - Síťová (Network)
 
 - Jednotka dat - **packet**
 - **LAN** - Local Area Network
@@ -137,7 +144,7 @@
   - IPv4: **127.0.0.1**
   - IPv6: **::1**
 
-### Druhy vysílání
+#### Druhy vysílání
 
 - **Broadcast** - Posílá všem zařízením.
   - poslední adresa v síti(podsíti)
@@ -145,7 +152,12 @@
 - **Unicast** - Posílá jednomu zařízení.
 - **Anycast** - Posílá prvnímu zařízení, které to přijme.
 
-### IPv4
+#### Protokoly
+
+- **IP** - Internet Protokol
+- ICMP - Protokol pro Ping
+
+#### IPv4
 
 - 32 bitové adresy - omezený počet, kterého bylo dosaženo.
   - **2<sup>32</sup>** - cca 4 miliardy
@@ -157,15 +169,16 @@
   - **10**.x.x.x (**10.0.0.0/8**)
   - **172.16-31**.x.x (**172.16.0.0/12**)
 
-### IPv6
+#### IPv6
 
 - 128 bitové adresy - počtem prakticky neomezené.
 - např.: **2001:0db8:85a3:08d3:1319:8a2e:0370:7334**
 - Dělí se na lokální a globální.
-  - Local: **fe80**:xxxx:...
+  - Link-Local: **fe80**:xxxx:...
+  - Unikátní Local: **fd00**:xxxx:...
   - Global: **2001**:xxxx:...
 
-### Podsíť
+#### Podsíť
 
 - Způsob vytváření 1 nebo více podsítí, které o sobě neví a nemohou spolu komunikovat.
 - Daná podsíť má rozsah, který určuje maska sítě.
@@ -173,7 +186,7 @@
 - např.: v rozsahu 10.2.0.0-10.2.0.127 je adresa sítě 10.2.0.0 a multicast adresa 10.2.0.127
 - Tudíž je v podsíti pro zařízení volných adres o 2 míň než je rozsah, v tomto případě 126.
 
-### Maska sítě
+#### Maska sítě
 
 - Určuje počet rozsahů v podsíti.
 - Zapisuje se jako IP adresa, s tím že každá složka značí, jaké jsou rozsahy v dané části adresy.
@@ -184,7 +197,7 @@
   - 254 - dají se zapsat 2 hodnoty, 0 nebo 1, 128 rozsahů
   - 128 - dá se zapsat 128 hodnot, 2 rozsahy (0-127, 128-255)
 - Za lomítkem u IP adresy se zapisuje zkrácený zápis masky.
-např.:
+- např.:
   - `IP - maska` (zkrácený zápis)
   - `10.x.x.x - 255.0.0.0` (10.10.10.15/**8**)
   - `192.168.0.x - 255.255.255.0` (192.168.0.12/**24**)
@@ -207,14 +220,14 @@ např.:
   - Počet rozsahů je `256 / 128 = 2`
   - Rozsahy jsou `0-127`, `128-255`
 
-### Porty
+#### Porty
 
 - **0-1024** = systémové
 - **1025-49151** = registrované
 - **49152-65535** = ephemeral (dynamické)
   - používají se s **PNAT**
 
-### Převody adres
+#### Převody adres
 
 - **ARP** (Address Resolution Protocol) = IP <=> MAC
 - **NAT** (Network Address Table) = Public IPv4 <=> Private IPv4
@@ -233,22 +246,22 @@ např.:
   - 172.22.11.152 <=> 82.142.64.242:61000
   - 172.22.11.153 <=> 82.142.64.242:62543
 
-### Port Forwarding
+#### Port Forwarding
 
 - staticky přiřadí počítači jeden daný port pro přesměrování vší komunikace na daném portu
 
-### Přiřazování adres
+#### Přiřazování adres
 
 - světově - ICANN + IANA
 - regionálně - RIR (např. RIPE NNC - Evropa, ARIN - Amerika)
 
-### AS - Autonomní systém
+#### AS - Autonomní systém
 
 - spravované operátory, big tech spoleečnostmi apod.
 - např.: Deutsch Telekom - Evropský
 - největší jsou "Páteř internetu"
 
-### Směrovací protokoly
+#### Směrovací protokoly
 
 - **BGP** - protokol pro komunikaci mezi AS
 - **OSPF** - open shortest path first - pro komunikaci uvnitř AS
@@ -256,13 +269,13 @@ např.:
 - Postup směrování:
   - LAN – router – router operátora – peering centrum
 
-### Aktivní prvky
+#### Aktivní prvky
 
 - **Router** - na propojení sítí navzájem a směrování toku dat
   - adreesa routeru je **Default Gateway** při konfiguraci IP na zařízeních
 - **Hub** - zastaralý, posílá všechno všem
 
-### Topologie Sítí
+#### Topologie Sítí
 
 - Star
 - Bus
@@ -274,19 +287,19 @@ např.:
 - Line
 - [Diagram Topologií](https://spstrebesin-my.sharepoint.com/:i:/g/personal/dobias121_trebesin_cz/EXAOGO7a3HhJkZAn4rT4pxQB1wStiKBw828TlavsJ_j4Hg?e=D4vZBf)
 
-## 4. Vrstva - Transportní (Transport)
+### 4. Vrstva - Transportní (Transport)
 
 - Jednotka dat - **segment**
 - Zajišťuje, že se potřebná data spolehlivě přenesou mezi koncovými zařízeními.
 - Vrstva, na které se zařizují síťové **porty**.
 
-### Protokoly
+#### Protokoly
 
 - **TCP** - spolehlivější (potvrzení přijetí), ale pomalejší
   - používá se na většině
 - **UDP** - méně spolehlivý, ale rychlejší (použítí na streamy, hry atd.)
 
-### **TLS** - Transport Layer Security
+#### **TLS** - Transport Layer Security
 
 - kryptografický protokol (SSL je jeho předchůdce)
 - **TCP 3-way handshake** - zahájení spojení u TCP:
@@ -295,22 +308,23 @@ např.:
   - C <--- S - **SYN-ACK**  (pozdrav zpátky)
   - C ---> S - **ACK** (potvrzení pozdravu zpátky)
 
-### Další pojmy
+#### Další pojmy
 
 - **MTU** - Maximum transmission unit - 1,5 kB Maximální velikost packetu (segment + hlavičky)
 - **MSS** - Maximum segment size - maximální velikost segmentu (packet bez hlaviček)
 - **Fragmentace** - Dělení packetů na menší kousky, aby byly schopné proudit přes linky i s nižšími limity.
+  - Není žádána, způsobuje zpomalení.
 - **Jumbo frame** - umožňuje mít podstatně větší limit MTU, používá se např. při testování.
 
-## 5. Vrstva - Relační (Session)
+### 5. Vrstva - Relační (Session)
 
-- Vrstva pro **ověřování**(authentikaci), **udělování přístupu**(autorizaci) a **udržování spojení** v relacích(session).
+- Vrstva pro **ověřování**(authentikaci), **udělování přístupu**(autorizaci) a **udržování spojení** (počet připojení) v relacích(session).
 
-## 6. Vrstva - Prezentační (Presentation)
+### 6. Vrstva - Prezentační (Presentation)
 
 - Vrstva pro **šifrovaní**, **kompresy** a **dekódování**.
 
-## 7. Vrstva - Aplikační (Application)
+### 7. Vrstva - Aplikační (Application)
 
 - Vrstva pro aplikace v sítích a jejich **protokoly**.
 - web, discord, sdílení souborů, e-mail atd.
@@ -320,11 +334,13 @@ např.:
   - **FTP** - File Transfer Protocol - port **21**
   - **SMTP** - Simple Mail Tranfer Protocol - port **25**
 
-### Email
+#### Email
 
 - [Diagram Komunikace Na Excalidraw](https://excalidraw.com/#json=rKo0ce0mUEBMauJUu03-4,mK_i1nJnwvFp0-rQp0IgQQ)
+- **doménový koš** - Místo pro emaily na nexexistující adresu.
 
-### Malware
+
+#### Malware
 
 - Trojan - na první pohled dělá co má, ve skutečnosti škodí.
 - Keylogger
@@ -336,7 +352,7 @@ např.:
 - Phishing - snaha získání přístupových údajů tím, že se prezentuje jako legitimní stránka/osoba
 - Ransomware - zašifruje data a dožaduje výkupné
 
-### Instant Messaging
+#### Instant Messaging
 
 - Discord, Whatsapp, Instagram DMs
 - Signal - bezpečný
@@ -344,7 +360,7 @@ např.:
   - koncové šifrování
   - data mohou přečíst pouze mezi sebou
 
-## TCP/IP
+### TCP/IP
 
 - Způsob modelování síťových vrstev v praxi.
   1. Rozhraní (OSI - 1. Fyzická a 2. Linková)
@@ -352,7 +368,7 @@ např.:
   3. Transportní
   4. Aplikační (OSI - 5. Relační, 6. Prezentační a 7. Aplikační)
 
-### Enkapsulace dat
+#### Enkapsulace dat
 
 - Návaznost dat na různých vrstvách TCP/IP modelu:
   - L5 Aplikační - **Data**
@@ -362,7 +378,7 @@ např.:
   - L1 Fyzická - bity
 - [Diagram pro představu](https://spstrebesin-my.sharepoint.com/personal/dobias121_trebesin_cz/_layouts/15/embed.aspx?UniqueId=92a894fe-15bc-4b47-a0a7-3d8f78bc53d5)
 
-## P2P - Peer-to-Peer
+### P2P - Peer-to-Peer
 
 - Distribuovaná síť, kde má každé zúčastněné zařízení stejná oprávnění.
   - Rozdíl oproti klasické architektuře klient-server, kde má server vždy vyšší autoritu. Zařízení tak poskytuje i požaduje zároveň.
@@ -372,7 +388,7 @@ např.:
   - **Workgroups** je způsob sdílení souborů v Windows, který používá SMB a zajišťuje tak možnost jednoduše sdílet složky mezi počítači, soubory do tiskáren apod.
   - **Samba** - sdílení souborů mezi Windows a Linux
 
-## VPN - Virtual Private Network
+### VPN - Virtual Private Network
 
 - Služba umožňující soukromý přístup k internetu za pomocí kombinace proxy a šifrovaní.
 - Proxy => výsledná veřejná IP adresa je odlišná
@@ -381,9 +397,9 @@ např.:
 - Pomocí VPN se dá obejít geoblocking - použitím VPN serveru v zemi, kde obsah není blokován.
 - ISP nemůže přímo nahlížet do komunikace, ale může stále vidět DNS požadavky, na to je potřeba separátní nastavení.
 
-## Bezdrátové sítě
+### Bezdrátové sítě
 
-### Frekvenční pásma
+#### Frekvenční pásma
 
 - **Licenční**
   - určeno a hlídáno **ČTÚ** (Českým Telekomunikačním Úřadem)
@@ -393,7 +409,7 @@ např.:
   - dají se používat bez licenčních omezení
   - Např.: Mikrovlnka, Vysílačky, Wi-Fi
 
-### WLAN - Wireless LAN
+#### WLAN - Wireless LAN
 
 - Bezdrátová síť Wi-Fi
 - Zapezpeční pomocí hesla
@@ -417,7 +433,7 @@ např.:
   - **CSMA – CA** na zamezení přerušování
 - **SSID** - název sítě Wi-Fi
 
-### IoT Bezdrát
+#### IoT Bezdrát
 
 - **LoRa** a **Sigfox 0G**
   - technologie bezdrátových sítí pro zařízení IoT
@@ -425,7 +441,7 @@ např.:
   - pásmo **<1Ghz**
   - operátoři po celém světě (např. LoRa - Amazon)
 
-## Cloud
+### Cloud
 
 - *"Someone else's computer"*
 - Služby poskytované prostřednictvím internetu online.
@@ -451,4 +467,3 @@ např.:
   - Vyhledávače - Google, DuckDuckGo
   - Úložiště Souborů - Google Drive, OneDrive, Mega
   - a mnoho dalších
-

@@ -24,7 +24,12 @@ em { font-style: italic; }
     </head>
     <body>
 
-<h1 id="dns">DNS</h1>
+<h1 id="po-ta-ov-s-t-pos">Počítačové Sítě - POS</h1>
+<p><strong>Tento dokument nikterak nezaručuje stoprocentní pokrytí veškerého učiva nutného ke složení maturitní zkoušky, individuální přezkoumání každé maturitní otázky zvlášť a dohledání případně chybějících informací JE DOPORUČENO! Tvůrce dokumentu není zodpovědný za případné psychické, fyzické, duševní, či materiální škody způsobené nedbalou přípravou na maturitní zkoušku. 🐸🐸</strong></p>
+<ul>
+<li><strong><em>Odkazy na další materiály můžete naleznout v souboru ZDROJE K OTÁZKÁM.</em></strong></li>
+</ul>
+<h2 id="dns">DNS</h2>
 <ul>
 <li>Služba co převádí domény na IP adresy.</li>
 <li>Můžeme mít vlastní v síti pro vnitřní potřeby a nebo použít globální pro domény mimo vnitřní síť.</li>
@@ -43,7 +48,7 @@ em { font-style: italic; }
 </ul>
 </li>
 </ul>
-<h2 id="-rovn-dom-n">Úrovně domén</h2>
+<h3 id="-rovn-dom-n">Úrovně domén</h3>
 <ul>
 <li><strong>Root(.)</strong> - tečka na konci (která se nepíše) - pramen všech domén.</li>
 <li><strong>1. řádu</strong> - Domény udržují správci domén a dávají možnost registrátorům poskytovat jej. TLD (Top Level Domain) (<strong>.com</strong>, <strong>.cz</strong>)</li>
@@ -51,7 +56,7 @@ em { font-style: italic; }
 <li><strong>3. řádu</strong> - Doména se vytváří v rámci webů. (<strong>www</strong>.google.com, <strong>jidelna</strong>.trebesin.cz)</li>
 <li>Př.: správce domény .cz - <strong>CZ.NIC</strong></li>
 </ul>
-<h2 id="typy-z-znam-dom-n">Typy záznamů domén</h2>
+<h3 id="typy-z-znam-dom-n">Typy záznamů domén</h3>
 <ul>
 <li><strong>A</strong> - doména -&gt; IPv4 adresa</li>
 <li><strong>AAAA</strong> - doména -&gt; IPv6 adresa</li>
@@ -59,30 +64,41 @@ em { font-style: italic; }
 <li><strong>PTR</strong> - reversní záznam - IP adresa -&gt; doména</li>
 <li>další: NS, TTL, DS, MX, TXT atd.</li>
 </ul>
-<h2 id="ostatn-info">Ostatní info</h2>
+<h3 id="ostatn-info">Ostatní info</h3>
 <ul>
 <li><strong>DNSSEC</strong> - ochrana domén před zfalšováním pomocí digitálního podpisu</li>
 <li><strong>whois</strong> - služba zpětného vyhledávání domény v registru, dají se najít informace např.: kde/kdo ji registroval, u koho byla registrována atd.</li>
 <li><strong>nslookup/dig (WIN/LINUX)</strong> - příkazy pro zjištění DNS záznamů</li>
 </ul>
-<h1 id="dhcp">DHCP</h1>
+<h2 id="dhcp">DHCP</h2>
 <ul>
 <li>Služba co automaticky přiřazuje IP adresy v síti.</li>
 <li>Využívá se pro usnadnění práce - (není potřeba každému počítači přiřazovat IP adresu manuálně).</li>
 <li>Některé počítače/IP adresy přiřazujeme manuálně, u některých je potřeba mít vždy stejnou IP adresu (služby, servery...).</li>
-<li>Většinou zajištěna routerem v domácích sítích, ve složit2jších sítích bývá na dedikovaných serverech.</li>
+<li>Většinou zajištěna routerem v domácích sítích, ve složitějších sítích bývá na dedikovaných serverech.</li>
 </ul>
-<h1 id="s-ov-vrstvy">Síťové vrstvy</h1>
-<h2 id="1-vrstva-fyzick-physical-">1. Vrstva - Fyzická (Physical)</h2>
+<h2 id="s-ov-vrstvy-osi-model">Síťové vrstvy - OSI Model</h2>
+<ol>
+<li>Fyzická (Physical)</li>
+<li>Linková (Data-Link)</li>
+<li>Síťová (Network)</li>
+<li>Transportní (Transportation)</li>
+<li>Relační (Session)</li>
+<li>Prezentační (Presentation)</li>
+<li>Aplikační (Application)</li>
+</ol>
+<h3 id="1-vrstva-fyzick-physical-">1. Vrstva - Fyzická (Physical)</h3>
 <ul>
 <li>Vztahuje se na fyzický přenos dat v kabelech nebo bezdrátově.</li>
 <li>Jednotka dat - <strong>bit</strong><ul>
 <li>čistá data - nuly a jedničky</li>
+<li>01101000011101000111010001110000011100110011101000101111001011110111001000101110011011010111010001100100011101100010111001101101011001010010111101101111011110000111010101010001011011000110001001010001011001010111011001011010</li>
 </ul>
 </li>
 </ul>
-<h3 id="p-enosov-m-dia-">Přenosová média:</h3>
+<h4 id="p-enosov-m-dia">Přenosová média</h4>
 <ul>
+<li><strong>Pasivní prvky sítě</strong></li>
 <li><strong>UTP (Unshielded Twisted Pair)</strong> kabel:<ul>
 <li>využívá <strong>elektrický proud</strong> k přenosu dat</li>
 <li>cenově nejefektivnější</li>
@@ -92,6 +108,7 @@ em { font-style: italic; }
 <li><strong>Optický (Optical)</strong> kabel:<ul>
 <li>využívá <strong>světlo</strong> k přenosu dat</li>
 <li>nejrychlejší a nejspolehlivější</li>
+<li>méně náchylný na elekromagnetické rušení, fyzicky ale křehčí</li>
 <li>využívá se v podmořských kabelech k propojení světového internetu</li>
 <li>half-duplex i <strong>full-duplex</strong> signál</li>
 </ul>
@@ -103,12 +120,12 @@ em { font-style: italic; }
 </ul>
 </li>
 <li><strong>Coaxiální kabel:</strong><ul>
-<li>zastaralý, pomalý</li>
+<li>zastaralý, pomalý, multiplex</li>
 </ul>
 </li>
 <li>U kabelů je potřeba na velké vzdálenosti použíti <strong>repeateru</strong>(opakovače) nebo <strong>amplifieru</strong>(zesilovače), aby se neztratil signál.</li>
 </ul>
-<h3 id="druhy-sign-l-">Druhy signálů</h3>
+<h4 id="druhy-sign-l-">Druhy signálů</h4>
 <ul>
 <li><strong>Simplex</strong><ul>
 <li>data mouhou proudit pouze jedním směrem</li>
@@ -116,6 +133,8 @@ em { font-style: italic; }
 </li>
 <li><strong>Half-Duplex</strong><ul>
 <li>data mohou proudit oběma směry, ale pouze jedním směrem najednou</li>
+<li>CSMA/CD collision detection – detekce střetu</li>
+<li>CSMA/CA collision avoidance – vyhnutí střetu - <strong>používanější</strong></li>
 </ul>
 </li>
 <li><strong>Full-Duplex</strong><ul>
@@ -123,31 +142,41 @@ em { font-style: italic; }
 </ul>
 </li>
 <li><strong>Multiplex</strong><ul>
-<li>data se posílají po několika kanálech najednou</li>
+<li>data se posílají po několika kanálech najednou (na více frekvencích)</li>
 </ul>
 </li>
 </ul>
-<h2 id="2-vrstva-linkov-data-link-">2. Vrstva - Linková (Data link)</h2>
+<h3 id="2-vrstva-linkov-data-link-">2. Vrstva - Linková (Data-Link)</h3>
 <ul>
 <li>Vztahuje se na přenos dat mezi zařízeními v síti.</li>
-<li>Jednotka dat - <strong>frame</strong>
-  - obsahuje hlavičku s paketem</li>
+<li>Jednotka dat - <strong>frame</strong><ul>
+<li>obsahuje hlavičku s paketem</li>
+</ul>
+</li>
 <li>Síťová zařízení zde mají - <strong>MAC adresy</strong><ul>
 <li>původně byly MAC adresy hardwarové, dnes se dají nastavit softwarově</li>
 <li>př.: 01:23:45:67:89:ab</li>
 </ul>
 </li>
 </ul>
-<h3 id="aktivn-prvky">Aktivní prvky</h3>
+<h4 id="aktivn-prvky">Aktivní prvky</h4>
 <ul>
-<li><strong>switch</strong>- na propojení zařízení v síti</li>
+<li><strong>switch</strong> - na propojení zařízení v síti</li>
+<li><strong>přístupový bod (access point - AP</strong>) - na připojení přes Wi-Fi</li>
 <li><strong>NIC</strong> <strong>(network interface card)</strong> - síťová karta v počítači</li>
 </ul>
-<h3 id="protokoly">Protokoly</h3>
+<h4 id="protokoly">Protokoly</h4>
 <ul>
 <li><strong>ARP (Address Resolution Protocol)</strong> - přiřazuje IP adresy k MAC adresám</li>
 </ul>
-<h2 id="3-vrstva-s-ov-network-">3. Vrstva - Síťová (Network)</h2>
+<h4 id="vlan">VLAN</h4>
+<ul>
+<li>Virtuální LAN fungující na linkové vrstvě.</li>
+<li>Nastavuje se na switchi.</li>
+<li>Počet zařízení je omezen počtem portů na switchi.</li>
+<li>Používá se k segregaci zařízení ve stejné realné síti.</li>
+</ul>
+<h3 id="3-vrstva-s-ov-network-">3. Vrstva - Síťová (Network)</h3>
 <ul>
 <li>Jednotka dat - <strong>packet</strong></li>
 <li><strong>LAN</strong> - Local Area Network<ul>
@@ -173,16 +202,27 @@ em { font-style: italic; }
 </ul>
 </li>
 </ul>
-<h3 id="druhy-vys-l-n-">Druhy vysílání</h3>
+<h4 id="druhy-vys-l-n-">Druhy vysílání</h4>
 <ul>
-<li><strong>Broadcast</strong> - Posílá všem zařízením.</li>
+<li><strong>Broadcast</strong> - Posílá všem zařízením.<ul>
+<li>poslední adresa v síti(podsíti)</li>
+</ul>
+</li>
 <li><strong>Multicast</strong> - Posílá vybraným zařízením hromadně.</li>
 <li><strong>Unicast</strong> - Posílá jednomu zařízení.</li>
-<li>(Anycast - Posílá prvnímu zařízení, co to přijme.)</li>
+<li><strong>Anycast</strong> - Posílá prvnímu zařízení, které to přijme.</li>
 </ul>
-<h3 id="ipv4">IPv4</h3>
+<h4 id="protokoly">Protokoly</h4>
 <ul>
-<li>32 bitové adresy - omezený počet, kterého bylo dosaženo.</li>
+<li><strong>IP</strong> - Internet Protokol</li>
+<li>ICMP - Protokol pro Ping</li>
+</ul>
+<h4 id="ipv4">IPv4</h4>
+<ul>
+<li>32 bitové adresy - omezený počet, kterého bylo dosaženo.<ul>
+<li><strong>2<sup>32</sup></strong> - cca 4 miliardy</li>
+</ul>
+</li>
 <li>Dělí se na <strong>Soukromé</strong> (private) (př.: 192.168.0.1) a <strong>Veřejné</strong> (public) (př.: 142.251.214.142)<ul>
 <li>Soukromé jsou specifické pro zařízení v LAN (místní síti).</li>
 <li>Veřejné se používají ve WAN (široké síti) ke směrování dat - jsou to IP adresy routerů.</li>
@@ -195,17 +235,18 @@ em { font-style: italic; }
 </ul>
 </li>
 </ul>
-<h3 id="ipv6">IPv6</h3>
+<h4 id="ipv6">IPv6</h4>
 <ul>
-<li>128 bitové adresy - prakticky neomezené.</li>
+<li>128 bitové adresy - počtem prakticky neomezené.</li>
 <li>např.: <strong>2001:0db8:85a3:08d3:1319:8a2e:0370:7334</strong></li>
 <li>Dělí se na lokální a globální.<ul>
-<li>Local: <strong>fe80</strong>:xxxx:...</li>
+<li>Link-Local: <strong>fe80</strong>:xxxx:...</li>
+<li>Unikátní Local: <strong>fd00</strong>:xxxx:...</li>
 <li>Global: <strong>2001</strong>:xxxx:...</li>
 </ul>
 </li>
 </ul>
-<h3 id="pods-">Podsíť</h3>
+<h4 id="pods-">Podsíť</h4>
 <ul>
 <li>Způsob vytváření 1 nebo více podsítí, které o sobě neví a nemohou spolu komunikovat.</li>
 <li>Daná podsíť má rozsah, který určuje maska sítě.</li>
@@ -213,7 +254,7 @@ em { font-style: italic; }
 <li>např.: v rozsahu 10.2.0.0-10.2.0.127 je adresa sítě 10.2.0.0 a multicast adresa 10.2.0.127</li>
 <li>Tudíž je v podsíti pro zařízení volných adres o 2 míň než je rozsah, v tomto případě 126.</li>
 </ul>
-<h3 id="maska-s-t-">Maska sítě</h3>
+<h4 id="maska-s-t-">Maska sítě</h4>
 <ul>
 <li>Určuje počet rozsahů v podsíti.</li>
 <li>Zapisuje se jako IP adresa, s tím že každá složka značí, jaké jsou rozsahy v dané části adresy.</li>
@@ -225,8 +266,8 @@ em { font-style: italic; }
 <li>128 - dá se zapsat 128 hodnot, 2 rozsahy (0-127, 128-255)</li>
 </ul>
 </li>
-<li>Za lomítkem u IP adresy se zapisuje zkrácený zápis masky.
-např.:<ul>
+<li>Za lomítkem u IP adresy se zapisuje zkrácený zápis masky.</li>
+<li>např.:<ul>
 <li><code>IP - maska</code> (zkrácený zápis)</li>
 <li><code>10.x.x.x - 255.0.0.0</code> (10.10.10.15/<strong>8</strong>)</li>
 <li><code>192.168.0.x - 255.255.255.0</code> (192.168.0.12/<strong>24</strong>)</li>
@@ -257,7 +298,7 @@ např.:<ul>
 </ul>
 </li>
 </ul>
-<h3 id="porty">Porty</h3>
+<h4 id="porty">Porty</h4>
 <ul>
 <li><strong>0-1024</strong> = systémové</li>
 <li><strong>1025-49151</strong> = registrované</li>
@@ -266,7 +307,7 @@ např.:<ul>
 </ul>
 </li>
 </ul>
-<h3 id="p-evody-adres">Převody adres</h3>
+<h4 id="p-evody-adres">Převody adres</h4>
 <ul>
 <li><strong>ARP</strong> (Address Resolution Protocol) = IP &lt;=&gt; MAC</li>
 <li><strong>NAT</strong> (Network Address Table) = Public IPv4 &lt;=&gt; Private IPv4</li>
@@ -291,33 +332,70 @@ např.:<ul>
 </ul>
 </li>
 </ul>
-<h3 id="port-forwarding">Port Forwarding</h3>
+<h4 id="port-forwarding">Port Forwarding</h4>
 <ul>
 <li>staticky přiřadí počítači jeden daný port pro přesměrování vší komunikace na daném portu</li>
 </ul>
-<h3 id="p-i-azov-n-adres">Přiřazování adres</h3>
+<h4 id="p-i-azov-n-adres">Přiřazování adres</h4>
 <ul>
 <li>světově - ICANN + IANA</li>
 <li>regionálně - RIR (např. RIPE NNC - Evropa, ARIN - Amerika)</li>
 </ul>
-<h3 id="as-autonomn-syst-m">AS - Autonomní systém</h3>
+<h4 id="as-autonomn-syst-m">AS - Autonomní systém</h4>
 <ul>
+<li>spravované operátory, big tech spoleečnostmi apod.</li>
 <li>např.: Deutsch Telekom - Evropský</li>
-<li>největší - &quot;Páteř internetu&quot;</li>
+<li>největší jsou &quot;Páteř internetu&quot;</li>
 </ul>
-<h3 id="sm-rovac-protokoly">Směrovací protokoly</h3>
+<h4 id="sm-rovac-protokoly">Směrovací protokoly</h4>
 <ul>
 <li><strong>BGP</strong> - protokol pro komunikaci mezi AS</li>
 <li><strong>OSPF</strong> - open shortest path first - pro komunikaci uvnitř AS</li>
 <li>Transit vs Peering - přenos dat mezi AS (placený vs free)</li>
+<li>Postup směrování:<ul>
+<li>LAN – router – router operátora – peering centrum</li>
 </ul>
-<h2 id="-4-transportn-vrstva">(4.) Transportní vrstva</h2>
-<h3 id="protokoly">Protokoly</h3>
+</li>
+</ul>
+<h4 id="aktivn-prvky">Aktivní prvky</h4>
 <ul>
-<li><strong>TCP</strong> - spolehlivější (potvrzení přijetí), ale pomalejší</li>
+<li><strong>Router</strong> - na propojení sítí navzájem a směrování toku dat<ul>
+<li>adreesa routeru je <strong>Default Gateway</strong> při konfiguraci IP na zařízeních</li>
+</ul>
+</li>
+<li><strong>Hub</strong> - zastaralý, posílá všechno všem</li>
+</ul>
+<h4 id="topologie-s-t-">Topologie Sítí</h4>
+<ul>
+<li>Star</li>
+<li>Bus<ul>
+<li>špatná topologie - všechna zařízení mají 1 linku, kde se mohou navzájem odposlouchávat</li>
+</ul>
+</li>
+<li>Ring</li>
+<li>Tree</li>
+<li>Mesh<ul>
+<li>vetšinou částečně propojený, lze i plně propojený</li>
+</ul>
+</li>
+<li>Line</li>
+<li><a href="https://spstrebesin-my.sharepoint.com/:i:/g/personal/dobias121_trebesin_cz/EXAOGO7a3HhJkZAn4rT4pxQB1wStiKBw828TlavsJ_j4Hg?e=D4vZBf">Diagram Topologií</a></li>
+</ul>
+<h3 id="4-vrstva-transportn-transport-">4. Vrstva - Transportní (Transport)</h3>
+<ul>
+<li>Jednotka dat - <strong>segment</strong></li>
+<li>Zajišťuje, že se potřebná data spolehlivě přenesou mezi koncovými zařízeními.</li>
+<li>Vrstva, na které se zařizují síťové <strong>porty</strong>.</li>
+</ul>
+<h4 id="protokoly">Protokoly</h4>
+<ul>
+<li><strong>TCP</strong> - spolehlivější (potvrzení přijetí), ale pomalejší<ul>
+<li>používá se na většině</li>
+</ul>
+</li>
 <li><strong>UDP</strong> - méně spolehlivý, ale rychlejší (použítí na streamy, hry atd.)</li>
 </ul>
-<h3 id="-tls-transport-layer-security"><strong>TLS</strong> - Transport Layer Security</h3>
+<h4 id="-tls-transport-layer-security"><strong>TLS</strong> - Transport Layer Security</h4>
 <ul>
 <li>kryptografický protokol (SSL je jeho předchůdce)</li>
 <li><strong>TCP 3-way handshake</strong> - zahájení spojení u TCP:<ul>
@@ -328,14 +406,216 @@ např.:<ul>
 </ul>
 </li>
 </ul>
-<h3 id="dal-pojmy">Další pojmy</h3>
+<h4 id="dal-pojmy">Další pojmy</h4>
 <ul>
 <li><strong>MTU</strong> - Maximum transmission unit - 1,5 kB Maximální velikost packetu (segment + hlavičky)</li>
 <li><strong>MSS</strong> - Maximum segment size - maximální velikost segmentu (packet bez hlaviček)</li>
-<li><strong>Fragmentace</strong> - Dělení packetů na menší kousky, aby byly schopné proudit přes linky i s nižšími limity.</li>
+<li><strong>Fragmentace</strong> - Dělení packetů na menší kousky, aby byly schopné proudit přes linky i s nižšími limity.<ul>
+<li>Není žádána, způsobuje zpomalení.</li>
+</ul>
+</li>
 <li><strong>Jumbo frame</strong> - umožňuje mít podstatně větší limit MTU, používá se např. při testování.</li>
+</ul>
+<h3 id="5-vrstva-rela-n-session-">5. Vrstva - Relační (Session)</h3>
+<ul>
+<li>Vrstva pro <strong>ověřování</strong>(authentikaci), <strong>udělování přístupu</strong>(autorizaci) a <strong>udržování spojení</strong> (počet připojení) v relacích(session).</li>
+</ul>
+<h3 id="6-vrstva-prezenta-n-presentation-">6. Vrstva - Prezentační (Presentation)</h3>
+<ul>
+<li>Vrstva pro <strong>šifrovaní</strong>, <strong>kompresy</strong> a <strong>dekódování</strong>.</li>
+</ul>
+<h3 id="7-vrstva-aplika-n-application-">7. Vrstva - Aplikační (Application)</h3>
+<ul>
+<li>Vrstva pro aplikace v sítích a jejich <strong>protokoly</strong>.</li>
+<li>web, discord, sdílení souborů, e-mail atd.</li>
+<li>Protokoly např.:<ul>
+<li><strong>HTTP</strong> - HyperText Transfer Protocol - port <strong>80</strong></li>
+<li><strong>HTTPS</strong> - HTTP Secure - port <strong>443</strong></li>
+<li><strong>FTP</strong> - File Transfer Protocol - port <strong>21</strong></li>
+<li><strong>SMTP</strong> - Simple Mail Tranfer Protocol - port <strong>25</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="email">Email</h4>
+<ul>
+<li><a href="https://excalidraw.com/#json=rKo0ce0mUEBMauJUu03-4,mK_i1nJnwvFp0-rQp0IgQQ">Diagram Komunikace Na Excalidraw</a></li>
+<li><strong>doménový koš</strong> - Místo pro emaily na nexexistující adresu.</li>
+</ul>
+<h4 id="malware">Malware</h4>
+<ul>
+<li>Trojan - na první pohled dělá co má, ve skutečnosti škodí.</li>
+<li>Keylogger<ul>
+<li>Zaznamenává vstupy (zejména klávsnici) uživatele bez jeho vědomí za účelem získání citlivých dat.</li>
+</ul>
+</li>
+<li>Backdoor<ul>
+<li>&quot;Zadní vrátka&quot;</li>
+<li>reverse shell - neoprávněný přístup k privilegovanému shellu (příkazový řádek) zařízení</li>
+</ul>
+</li>
+<li>Virus - šíří se mezi zařízeními</li>
+<li>Phishing - snaha získání přístupových údajů tím, že se prezentuje jako legitimní stránka/osoba</li>
+<li>Ransomware - zašifruje data a dožaduje výkupné</li>
+</ul>
+<h4 id="instant-messaging">Instant Messaging</h4>
+<ul>
+<li>Discord, Whatsapp, Instagram DMs</li>
+<li>Signal - bezpečný</li>
+<li>E2EE - End 2 End Encryption<ul>
+<li>koncové šifrování</li>
+<li>data mohou přečíst pouze mezi sebou</li>
+</ul>
+</li>
+</ul>
+<h3 id="tcp-ip">TCP/IP</h3>
+<ul>
+<li>Způsob modelování síťových vrstev v praxi.<ol>
+<li>Rozhraní (OSI - 1. Fyzická a 2. Linková)</li>
+<li>Síťová</li>
+<li>Transportní</li>
+<li>Aplikační (OSI - 5. Relační, 6. Prezentační a 7. Aplikační)</li>
+</ol>
+</li>
+</ul>
+<h4 id="enkapsulace-dat">Enkapsulace dat</h4>
+<ul>
+<li>Návaznost dat na různých vrstvách TCP/IP modelu:<ul>
+<li>L5 Aplikační - <strong>Data</strong></li>
+<li>L4 Transportní - <strong>segment = Hlavička (TCP/UDP) + zbytek</strong></li>
+<li>L3 Síťová - <strong>packet = IP + zbytek</strong></li>
+<li>L2 Linková (Rozhraní) - <strong>frame = MAC + zbytek</strong></li>
+<li>L1 Fyzická - bity</li>
+</ul>
+</li>
+<li><a href="https://spstrebesin-my.sharepoint.com/personal/dobias121_trebesin_cz/_layouts/15/embed.aspx?UniqueId=92a894fe-15bc-4b47-a0a7-3d8f78bc53d5">Diagram pro představu</a></li>
+</ul>
+<h3 id="p2p-peer-to-peer">P2P - Peer-to-Peer</h3>
+<ul>
+<li>Distribuovaná síť, kde má každé zúčastněné zařízení stejná oprávnění.<ul>
+<li>Rozdíl oproti klasické architektuře klient-server, kde má server vždy vyšší autoritu. Zařízení tak poskytuje i požaduje zároveň.</li>
+</ul>
+</li>
+<li>Zařízení = <strong>Node</strong> (uzel)</li>
+<li>Často se využívá k efektivnímu sdílení souborů.<ul>
+<li><strong>Torrent</strong> funguje jako decentralizovaná síť zařízení, kde každé posílá růzé kousky dat patřících do jednoho celku.</li>
+<li><strong>Workgroups</strong> je způsob sdílení souborů v Windows, který používá SMB a zajišťuje tak možnost jednoduše sdílet složky mezi počítači, soubory do tiskáren apod.</li>
+<li><strong>Samba</strong> - sdílení souborů mezi Windows a Linux</li>
+</ul>
+</li>
+</ul>
+<h3 id="vpn-virtual-private-network">VPN - Virtual Private Network</h3>
+<ul>
+<li>Služba umožňující soukromý přístup k internetu za pomocí kombinace proxy a šifrovaní.</li>
+<li>Proxy =&gt; výsledná veřejná IP adresa je odlišná</li>
+<li>Spousta různých poskytovatelů - NordVPN, Mullvad VPN, Proton VPN</li>
+<li>VPN zadarmo často může znamenat, že si vydělávají na datech uživatelů (loggování)</li>
+<li>Pomocí VPN se dá obejít geoblocking - použitím VPN serveru v zemi, kde obsah není blokován.</li>
+<li>ISP nemůže přímo nahlížet do komunikace, ale může stále vidět DNS požadavky, na to je potřeba separátní nastavení.</li>
+</ul>
+<h3 id="bezdr-tov-s-t-">Bezdrátové sítě</h3>
+<h4 id="frekven-n-p-sma">Frekvenční pásma</h4>
+<ul>
+<li><strong>Licenční</strong><ul>
+<li>určeno a hlídáno <strong>ČTÚ</strong> (Českým Telekomunikačním Úřadem)</li>
+<li>je zapotřebí licence na vysílání signálu</li>
+<li>Např.: DVB-T2 (TV), Rádio, Telefon</li>
+</ul>
+</li>
+<li><strong>Bezlicenční</strong><ul>
+<li>dají se používat bez licenčních omezení</li>
+<li>Např.: Mikrovlnka, Vysílačky, Wi-Fi</li>
+</ul>
+</li>
+</ul>
+<h4 id="wlan-wireless-lan">WLAN - Wireless LAN</h4>
+<ul>
+<li>Bezdrátová síť Wi-Fi</li>
+<li>Zapezpeční pomocí hesla<ul>
+<li><strong>WPA 2</strong> - starší, minimum</li>
+<li><strong>WPA 3</strong> - lepší</li>
+<li>šifrováno pomocí <strong>AES</strong></li>
+</ul>
+</li>
+<li>dělení dle frekvence<ul>
+<li><strong>2.4Ghz</strong><ul>
+<li>delší dosah, méně přerušení přes zdi</li>
+<li>menší rychlost</li>
+<li>málo dostupných kanálů - hodně překrývání<ul>
+<li>kanály <strong>1,6,11</strong> jsou jediné, co se vzájemně nepřekrývají</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>5Ghz</strong><ul>
+<li>kratší dosah, více rušení přes zdi</li>
+<li>vyšší rychlost</li>
+</ul>
+</li>
+<li><strong>6Ghz</strong><ul>
+<li>nejnovější, málo používaný</li>
+<li>nejvyšší rychlost, nejkratší dosah</li>
+<li>Wi-Fi generace 6 a výše</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>používá <strong>half-duplex</strong> signál<ul>
+<li><strong>CSMA – CA</strong> na zamezení přerušování</li>
+</ul>
+</li>
+<li><strong>SSID</strong> - název sítě Wi-Fi</li>
+</ul>
+<h4 id="iot-bezdr-t">IoT Bezdrát</h4>
+<ul>
+<li><strong>LoRa</strong> a <strong>Sigfox 0G</strong><ul>
+<li>technologie bezdrátových sítí pro zařízení IoT</li>
+<li>menší spotřeba energie</li>
+<li>pásmo <strong>&lt;1Ghz</strong></li>
+<li>operátoři po celém světě (např. LoRa - Amazon)</li>
+</ul>
+</li>
+</ul>
+<h3 id="cloud">Cloud</h3>
+<ul>
+<li><em>&quot;Someone else&#39;s computer&quot;</em></li>
+<li>Služby poskytované prostřednictvím internetu online.</li>
+<li><strong>Hosting</strong><ul>
+<li>poskytování výpočetních prostředků na internetu za poplatek</li>
+<li>největší poskytovetelé:<ul>
+<li><strong>Amazon</strong> - <strong>AWS</strong> (Amazon Web Services)</li>
+<li><strong>Microsoft</strong> - <strong>Azure</strong></li>
+<li>Google - Google Cloud</li>
+</ul>
+</li>
+<li>výhody:<ul>
+<li>silné výchozí zabezpečení</li>
+<li>pokrytí serverů a datacenter po celém světě</li>
+<li>výhodná cena</li>
+<li>snazší údržba</li>
+</ul>
+</li>
+<li>nevýhody:<ul>
+<li>cizí počítač - nemáme nad ním plnou moc<ul>
+<li>potenciální bezpečnostní rizika</li>
+</ul>
+</li>
+<li>cena určená poskytovatelem</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Služby pro uživatele<ul>
+<li>Cloud Gaming - NVIDIA, XBOX</li>
+<li>AI Assistenti - ChatGPT, Cloud</li>
+<li>Email - Gmail, Outlook</li>
+<li>Vyhledávače - Google, DuckDuckGo</li>
+<li>Úložiště Souborů - Google Drive, OneDrive, Mega</li>
+<li>a mnoho dalších</li>
+</ul>
+</li>
 </ul>
 
 
     </body>
 </html>
+
