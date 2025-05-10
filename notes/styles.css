@@ -21,3 +21,8 @@ em { font-style: italic; }
 a {color:rgb(55, 192, 255)}
 
 a:visited {color:rgb(182, 72, 255)}
+
+.break-word {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}

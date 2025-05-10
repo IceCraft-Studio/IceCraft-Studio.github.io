@@ -31,3 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
         heading.appendChild(link);
     });
 });
+
+document.querySelectorAll("li").forEach(li => {
+    if (li.textContent.includes("0110100001110100011101000111000001110011001110100")) {
+        li.classList.add("break-word");
+    }
+});
