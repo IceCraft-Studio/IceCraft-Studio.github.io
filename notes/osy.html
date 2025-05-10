@@ -1,0 +1,324 @@
+<html>
+    <head>
+        <style>
+body { background-color: #121212; color: #eaeaea; font-family: "Segoe UI", Tahoma, sans-serif; margin: 0; padding: 2em; line-height: 1.6; }
+
+h1, h2, h3 { margin: 1em 0 0.5em; font-weight: 600; }
+
+h1 { font-size: 2rem; color: #ffffff; }
+
+h2 { font-size: 1.75rem; color: #ffffff; text-decoration: underline; }
+
+h3 { font-size: 1.5rem; color: #ffffff; }
+
+ul { margin-bottom: 1em; padding-left: 1.5em; list-style-type: disc; }
+
+ul ul { list-style-type: circle; margin-bottom: 0; }
+
+ul ul ul { list-style-type: square; }
+
+strong { font-weight: 700; }
+
+em { font-style: italic; }
+          </style>
+    </head>
+    <body>
+
+<h1 id="opera-n-syst-my-osy">Operační Systémy - OSY</h1>
+<p><strong>Tento dokument nikterak nezaručuje stoprocentní pokrytí veškerého učiva nutného ke složení maturitní zkoušky, individuální přezkoumání každé maturitní otázky zvlášť a dohledání případně chybějících informací JE DOPORUČENO! Tvůrce dokumentu není zodpovědný za případné psychické, fyzické, duševní, či materiální škody způsobené nedbalou přípravou na maturitní zkoušku. 🐸🐸</strong></p>
+<ul>
+<li><strong><em>Odkazy na další materiály můžete naleznout v souboru ZDROJE K OTÁZKÁM.</em></strong></li>
+</ul>
+<h2 id="opera-n-syst-m-os">Operační Systém - OS</h2>
+<ul>
+<li>Použití OS:<ul>
+<li><strong>Desktopové</strong><ul>
+<li>Stolní PC</li>
+<li>Windows, Linux, MacOS</li>
+</ul>
+</li>
+<li><strong>Serverové</strong><ul>
+<li>Linux (Windows Server bruh)</li>
+<li>V datacentrech, servery, výpočetní technika.</li>
+</ul>
+</li>
+<li><strong>Mobilní</strong><ul>
+<li>Android, iOS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Umožňuje pro uživatele propojit software s hardwarem.</li>
+<li>OS se v základu dělí na <strong>jádro</strong>(kernel) a <strong>uživatelské prostředí</strong> (userspace)</li>
+<li><strong>API</strong> (Application Programming Interface) - Rozhraní pro komunikaci programů mezi sebou.</li>
+</ul>
+<h3 id="j-dro">Jádro</h3>
+<ul>
+<li>ovládá hardware (ovladače)</li>
+<li>základní dělení<ul>
+<li><strong>Monolithické</strong><ul>
+<li>Všechny systémové komponenty běží v jednom společném prostoru.</li>
+</ul>
+</li>
+<li><strong>Mikrojádro</strong><ul>
+<li>Různé systémové komponenty běží oddělené od nejzákladnějšího jádra.</li>
+<li>Pád odděleného komponentu nezpůsobí zhroucení jádra, bývá ale pomalejší.</li>
+</ul>
+</li>
+<li><strong>Hybridní</strong><ul>
+<li>Použití obou principů na různé části.</li>
+<li>Zvyšuje složitost jádra.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>řízení procesoru</li>
+<li><strong>Scheduler</strong> – plánuje běžící procesy, spouští je<ul>
+<li>obnoví stav procesu z doby kdy byl naposledy využíván (nahraje ho z RAM)</li>
+</ul>
+</li>
+<li><strong>Interrupt</strong> – přerušuje procesy<ul>
+<li>ukládá proces na RAM</li>
+</ul>
+</li>
+<li><strong>Preemtivní jádro</strong> - OS rozhoduje o čase procesu</li>
+<li><strong>Kooperativní jádro</strong> - aplikace sama určuje svůj čas na procesoru a pak předává slovo OS - zastaralé, nepoužívá se</li>
+<li><strong>Multitasking</strong><ul>
+<li>Procesy se rychle střídají na každém jádře procesoru.</li>
+<li>Dá se tak pracovat s více programy najednou.</li>
+</ul>
+</li>
+</ul>
+<h3 id="souborov-syst-my-file-system-fs-">Souborové Systémy (File System - FS)</h3>
+<ul>
+<li><strong>NTFS</strong> (New Technology File System) - FS používaný na Windows</li>
+<li><strong>Ext4</strong> - nejpoužívanější FS na Linuxu</li>
+<li><strong>FAT32</strong> - universální FS, vhodný na Flash disky</li>
+<li><strong>Journaling</strong> – Funkce FS zajišťující detekci přerušení zápisu při náhlém výpadku disku, aby na disku nevznikaly tzv. mrtvé bloky.</li>
+<li><strong>Defragmentation</strong> – Optimalizace rozložení dat na Hard discích. Zajistí, aby byly soubory v jednom celku, a tím se daly rychleji načíst z disku.<ul>
+<li>Neplatí pro SSD, u nich se pro optimalizaci používá funkce <strong>TRIM</strong> za odlišným účelem.</li>
+</ul>
+</li>
+</ul>
+<h3 id="soustava-jednotek-si">Soustava Jednotek SI</h3>
+<ul>
+<li><code>Kilo – 1 000</code></li>
+<li><code>Mega – 1 000 000</code></li>
+<li><code>Giga – 1 000 000 000</code></li>
+<li><code>Tera – 1 000 000 000 000</code></li>
+<li><em>umět rozeznat u věcí jako velikosti disku, frekvence procesoru atd.</em></li>
+</ul>
+<h3 id="bios">BIOS</h3>
+<ul>
+<li>nahraný na čipu základní desky</li>
+<li>klíčový komponent ke spuštění počítače, nezávislý na OS</li>
+<li><strong>POST</strong> (Power On Self Test) - kontrola funkčností nutných komponentů před spuštěním počítače (CPU, RAM, GPU)</li>
+<li><strong>Boot</strong> - spuštění OS</li>
+<li><strong>Bootloader</strong> - zavaděč, který nahraje OS do RAM</li>
+<li><strong>MBR</strong> (Master Boot Record) - speciální záznam na začátku disku, který uvádí, z jaké části disku spustit <strong>Bootloader</strong></li>
+<li>Postup <strong>Bootování</strong>:<ol>
+<li>Stiskne se vypínač</li>
+<li><strong>BIOS</strong> zahájí <strong>POST</strong></li>
+<li><strong>BIOS</strong> načte <strong>Bootloader</strong> pomocí <strong>MBR</strong></li>
+<li><strong>Bootloader</strong> nahraje OS do RAM</li>
+<li>Spustí se OS</li>
+</ol>
+</li>
+</ul>
+<h2 id="komponenty">Komponenty</h2>
+<ul>
+<li><em>umět rozeznat základní desku laptopu a desktopu</em></li>
+<li><em>umět popsat sloty (PCIe, USB atd.) a další součástky (např. baterku)</em></li>
+<li><em>znát HDD a SSD a rozdíly mezi nimi</em></li>
+<li><em>power supply</em></li>
+</ul>
+<h2 id="windows">Windows</h2>
+<ul>
+<li>Operační systém používaný na většině desktopových počítačů (bohužel)</li>
+<li>Proprietární, vyžaduje placenou licenci k neomezenému použití</li>
+<li>Hybridní jádro.</li>
+<li>Edice Windows<ul>
+<li><strong>Home</strong> - základní edice pro běžné uživatele</li>
+<li><strong>Pro</strong> - rozšířená edice pro pokročilé uživatele<ul>
+<li>navíc má např. <strong>Hyper-V</strong>, <strong>Vzdálený Přístup</strong> na daný PC, <strong>BitLocker</strong> šifrování disku</li>
+<li>je dražší</li>
+</ul>
+</li>
+<li><strong>Education</strong><ul>
+<li>pro školy</li>
+</ul>
+</li>
+<li><strong>Enterprise</strong><ul>
+<li>pro střední a větší společnosti</li>
+</ul>
+</li>
+<li><strong>IoT</strong><ul>
+<li>Na zařízení IoT</li>
+</ul>
+</li>
+<li><strong>Server</strong><ul>
+<li>Na servery... SMH</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Významné Verze Windows<ul>
+<li>založené na <strong>DOS</strong><ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>95</li>
+<li>98</li>
+</ul>
+</li>
+<li>založené na jádře <strong>NT</strong><ul>
+<li>XP</li>
+<li>Vista</li>
+<li>7</li>
+<li>10</li>
+<li>11 - nejnovější</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><em>více informací bych si rozhodně dohledal i jinde, nechce se mi tu všechno rozepisovat</em></strong></li>
+</ul>
+<h3 id="windows-server">Windows Server</h3>
+<h4 id="active-directory">Active Directory</h4>
+<ul>
+<li>Doména např. <strong>decko.cz</strong></li>
+<li>Další doména např. <strong>decko.sk</strong></li>
+<li>Společně mohou vytvořit <strong>strom(tree)</strong></li>
+<li>Více stromů je <strong>les(forest)</strong></li>
+<li>Kde najít nějaký informace k AD<ul>
+<li><a href="https://chatgpt.com/">ChatGPT</a></li>
+<li><a href="https://www.ondrej-soukup.cz/2009/08/typy-ad-objekt/">Typy objektů</a></li>
+<li><a href="https://moodle.vscht.cz/pluginfile.php/2976/mod_resource/content/0/AD-objekty.pdf">Něco z Windows Serveru 2003</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="licence">Licence</h2>
+<ul>
+<li><strong>Creative Commons</strong> - používá se u tvůrčích děl.<ul>
+<li><a href="https://creativecommons.org/share-your-work/cclicenses/">Vysvětlení na jejich webu</a></li>
+</ul>
+</li>
+<li><strong>GNU GPL</strong> (general public licence) v2/v3 - populární open-source licence (Linux)</li>
+<li><strong>BSD</strong> - permisivnější open-source licence</li>
+<li><strong>Freeware</strong> – software cenově zdarma, ale ne open-source<ul>
+<li>např. Discord (technicky Freemium)</li>
+</ul>
+</li>
+<li><strong>Free Software</strong> (open-source) - software s volně dostupným kódem, včetně povolení modifikace a redistribuce<ul>
+<li>např. Linux</li>
+<li><a href="https://opensource.org/osd">Definice open-source na stránkách OSI</a></li>
+</ul>
+</li>
+<li><strong>Proprietární Software</strong> – uzavřený, nedostupné zdrojové kódy, často placený<ul>
+<li>např. Adobe Produkty (Photoshop atd.)</li>
+</ul>
+</li>
+</ul>
+<h2 id="linux">Linux</h2>
+<ul>
+<li>Jádro OS založené <strong>Linusem Torvaldsem</strong>.</li>
+<li>Navržené podle architektury OS <strong>UNIX</strong>.</li>
+<li><strong>Monolitické</strong> ale modulární.</li>
+<li>Linux je zároveň i obecný termín pro skupinu OS založených na tomto jádře.</li>
+<li>Je open-source - licence <strong>GNU GPL v2</strong><ul>
+<li>paracují na něm vývojáři z celého světa, včetně firem jako Microsoft/Google/Amazon</li>
+</ul>
+</li>
+<li><strong>GNU</strong> - nástroje uživatelského prostředí OS, také po vzoru <strong>UNIX</strong>u<ul>
+<li>proto <strong>GNU/Linux</strong></li>
+</ul>
+</li>
+<li>drtivá většina serverů, datacenter a superpočítačů běží na Linux</li>
+<li>Android OS používá vlastní verzi jádra Linux</li>
+<li>Výsledné OS na bázi Linuxu jsou tzv. <strong>distribuce</strong><ul>
+<li>známé např. <strong>Ubuntu</strong>, <strong>Red Hat Enterprise Linux</strong>, <strong>Arch Linux</strong> a <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions#/media/File:Linux_Distribution_Timeline.svg">tisíce dalších</a>.</li>
+<li>každá jde podle své vlastní filozofie a tím určuje svůj účel, spojuje je jen základ jádra</li>
+</ul>
+</li>
+<li>Terminál - oblíbený program každého uživatele Linuxu<ul>
+<li>způsob provozování počítače pomocí příkazů bez GUI (grafického rozhraní)</li>
+<li><strong>shell</strong> - program, který zpracovává dané příkazy<ul>
+<li>základní shell na Linux - <strong>Bash</strong></li>
+</ul>
+</li>
+<li><a href="https://www.geeksforgeeks.org/linux-commands-cheat-sheet/">Seznam a vysvětlení základních příkazů</a><ul>
+<li><a href="https://informatecdigital.com/cs/z%C3%A1kladn%C3%AD-p%C5%99%C3%ADkazy-v-linuxu/">Česky</a></li>
+</ul>
+</li>
+<li><a href="https://linuxhandbook.com/linux-file-permissions/">Vysvětlení oprávnění souborů na Linuxu</a><ul>
+<li><a href="https://etechblog.cz/vysvetleni-opravneni-k-souborum-a-adresarum-linux/">Česky</a></li>
+</ul>
+</li>
+<li><a href="https://linuxhandbook.com/linux-directory-structure/">Vysvětlení složek v root FS na Linuxu</a><ul>
+<li><a href="https://www.linux-mint-czech.cz/2014/09/jaky-je-smysl-slozek-v-adresarove-strukture-linux-mintu/">Česky</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>/etc/passwd</code> - Soubor kde jsou uloženi uživatelé.</li>
+<li><code>/etc/group</code> - Soubor, kde jsou uložené skupiny.</li>
+<li><code>/etc/shadow</code> - Soubor, kde jsou uložená hesla.</li>
+</ul>
+<h2 id="virtualizace">Virtualizace</h2>
+<ul>
+<li>proces spouštění OS na virtuálním hardwaru uvnitř již běžícího OS</li>
+<li>2 úrovně<ol>
+<li>blíže k hardwaru – <strong>Hyper-V</strong> (Windows), <strong>KVM</strong> (Linux)</li>
+<li>více softwarové – <strong>Virtual-Box</strong>, <strong>VMWare</strong> atd.</li>
+</ol>
+</li>
+<li>využití - škálování serverů, testování, izolace (bezpečnost)</li>
+<li><strong>Kontejnery</strong><ul>
+<li>Programy pro zajištění konzistentního prostředí pro spuštění softwaru na různých systémech.</li>
+<li>např. <strong>Docker</strong>, <strong>Podman</strong></li>
+<li>mohou využívat virtualizaci</li>
+</ul>
+</li>
+</ul>
+<h2 id="ochrana-dat">Ochrana Dat</h2>
+<h3 id="-ifrov-n-">Šifrování</h3>
+<ul>
+<li><p>Symetrické</p>
+<ul>
+<li>TEXT &lt;– Klíč –&gt; Šifra</li>
+</ul>
+</li>
+<li><p>Asymetrické</p>
+<ul>
+<li>využívá se u E2EE (messaging apps), digitálních podpisů</li>
+<li><a href="https://spstrebesin-my.sharepoint.com/:i:/g/personal/dobias121_trebesin_cz/Ee8ZAoMk0KdDhO9odYIaLBEBN4ZuzbTmYUsorbmCT6moEg?e=QxuFh1">Diagram vysvětlující digitální podpis</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="raid">Raid</h3>
+<ul>
+<li>Seskupení více disků do 1 logické jednotky pro zefektivnění či zálohování dat.</li>
+<li>Úrovně RAIDu<ul>
+<li>0 - pouze logické rozdělení - části dat jsou rozložený po více discích (střídavé ukládání)<ul>
+<li>zvýšení výkonu</li>
+</ul>
+</li>
+<li>1 - zrcadelní dat 1:1<ul>
+<li>menší kapacita</li>
+</ul>
+</li>
+<li>2 - jednoduchá error korekce</li>
+<li>5 - min. počet 3 disků - pokročilá error korekce<ul>
+<li>kontrolní data (parity) jsou distribuovaná po discích, takže při výpadku kteréhokoliv z nich (pouze 1 může vypadnout), lze ztracená data dopočítat</li>
+<li><a href="https://spstrebesin-my.sharepoint.com/:u:/g/personal/dobias121_trebesin_cz/ESZb8AKtGTlJu6NlNi5ZvcMBnd5Iax94QHs1_mvqow5sjw?e=iTcFXr">Obrázek pro představu</a></li>
+<li>je dražší na provoz</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+    </body>
+</html>
+
