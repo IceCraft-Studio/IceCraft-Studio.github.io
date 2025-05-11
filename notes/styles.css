@@ -4,7 +4,7 @@ h1, h2, h3 { margin: 1em 0 0.5em; font-weight: 600; }
 
 h1 { font-size: 2rem; color: #ffffff; }
 
-h2 { font-size: 1.75rem; color: #ffffff; text-decoration: underline; }
+h2 { font-size: 1.75rem; color: #ffffff; text-decoration: none; }
 
 h3 { font-size: 1.5rem; color: #ffffff; }
 
