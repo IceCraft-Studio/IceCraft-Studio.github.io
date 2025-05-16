@@ -462,7 +462,7 @@
     - cena určená poskytovatelem
 - Služby pro uživatele
   - Cloud Gaming - NVIDIA, XBOX
-  - AI Assistenti - ChatGPT, Cloud
+  - AI Assistenti - ChatGPT, Cloude
   - Email - Gmail, Outlook
   - Vyhledávače - Google, DuckDuckGo
   - Úložiště Souborů - Google Drive, OneDrive, Mega
