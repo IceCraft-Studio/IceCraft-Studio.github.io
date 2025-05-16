@@ -376,7 +376,7 @@
   - L3 Síťová - **packet = IP + zbytek**
   - L2 Linková (Rozhraní) - **frame = MAC + zbytek**
   - L1 Fyzická - bity
-- [Diagram pro představu](https://spstrebesin-my.sharepoint.com/personal/dobias121_trebesin_cz/_layouts/15/embed.aspx?UniqueId=92a894fe-15bc-4b47-a0a7-3d8f78bc53d5)
+- [Diagram pro představu](https://spstrebesin-my.sharepoint.com/:i:/g/personal/dobias121_trebesin_cz/Ef6UqJK8FUdLoKc9j3i8U9UBhIHEZfx0vef63Y_973N0BA?e=89iZhr)
 
 ### P2P - Peer-to-Peer
 
