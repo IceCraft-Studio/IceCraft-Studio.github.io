@@ -156,7 +156,7 @@
 - Android OS používá vlastní verzi jádra Linux
 - Výsledné OS na bázi Linuxu jsou tzv. **distribuce**
   - známé např. **Ubuntu**, **Red Hat Enterprise Linux**, **Arch Linux** a [tisíce dalších](https://en.wikipedia.org/wiki/List_of_Linux_distributions#/media/File:Linux_Distribution_Timeline.svg).
-  - každá jde podle své vlastní filozofie a tím určuje svůj účel, spojuje je jen základ jádra
+  - každá jde podle své vlastní filozofie a tím určuje svůj účel.
 - Terminál - oblíbený program každého uživatele Linuxu
   - způsob provozování počítače pomocí příkazů bez GUI (grafického rozhraní)
   - **shell** - program, který zpracovává dané příkazy
