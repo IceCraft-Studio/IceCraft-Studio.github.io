@@ -7,8 +7,11 @@
    viewBox="0 0 100 100"
    version="1.1"
    id="svg5"
-   sodipodi:docname="IceCraft Logo 3.svg"
+   sodipodi:docname="IceCraft Logo 4.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   inkscape:export-filename="IceCraft Logo 4.png"
+   inkscape:export-xdpi="130.048"
+   inkscape:export-ydpi="130.048"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -26,9 +29,9 @@
      showgrid="false"
      width="250mm"
      units="mm"
-     inkscape:zoom="1.1057159"
-     inkscape:cx="137.9197"
-     inkscape:cy="175.45194"
+     inkscape:zoom="0.55285795"
+     inkscape:cx="306.5887"
+     inkscape:cy="338.2424"
      inkscape:window-width="1536"
      inkscape:window-height="795"
      inkscape:window-x="0"
@@ -70,14 +73,14 @@
        id="g4510" />
     <path
        id="rect6068"
-       style="fill:#81beff;stroke:#4f4f4f;stroke-width:0;fill-opacity:1"
-       d="M 99.998966,0 100,99.999232 29.846094,99.999126 93.214043,5.1965062e-4 Z"
+       style="fill:#81beff;fill-opacity:1;stroke:#4f4f4f;stroke-width:0"
+       d="m 100,50 v 50 H 0 L 50,50 Z"
        sodipodi:nodetypes="ccccc" />
     <path
-       id="rect6068-5"
+       id="rect6068-6"
        style="fill:#6ca3fd;fill-opacity:1;stroke:#4f4f4f;stroke-width:0"
-       d="M 9.2418708e-4,90.505247 84.907456,4.3280813e-4 93.219161,8.618618e-4 29.846112,99.99943 8.4379673e-4,99.999713 Z"
-       sodipodi:nodetypes="cccccc" />
+       d="M 100,0 V 50 H 50 V 4.2272459e-4 Z"
+       sodipodi:nodetypes="ccccc" />
     <g
        id="g1"
        transform="translate(2.0508852,4.480329)">
