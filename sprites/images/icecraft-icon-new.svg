@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="IceCraft Logo 3.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="250mm"
+     units="mm"
+     inkscape:zoom="1.1057159"
+     inkscape:cx="137.9197"
+     inkscape:cy="175.45194"
+     inkscape:window-width="1536"
+     inkscape:window-height="795"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="true"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4514">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g4510"
+         id="use4516"
+         width="100%"
+         height="100%" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#4488ff;fill-opacity:1;stroke-width:0.264583"
+       id="rect31"
+       width="100"
+       height="100"
+       x="0"
+       y="0"
+       ry="0"
+       rx="0" />
+    <g
+       inkscape:label="Clip"
+       id="g4510" />
+    <path
+       id="rect6068"
+       style="fill:#81beff;stroke:#4f4f4f;stroke-width:0;fill-opacity:1"
+       d="M 99.998966,0 100,99.999232 29.846094,99.999126 93.214043,5.1965062e-4 Z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="rect6068-5"
+       style="fill:#6ca3fd;fill-opacity:1;stroke:#4f4f4f;stroke-width:0"
+       d="M 9.2418708e-4,90.505247 84.907456,4.3280813e-4 93.219161,8.618618e-4 29.846112,99.99943 8.4379673e-4,99.999713 Z"
+       sodipodi:nodetypes="cccccc" />
+    <g
+       id="g1"
+       transform="translate(2.0508852,4.480329)">
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#5f5d5d;stroke-width:9.16532;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2850-6-5"
+         width="52.834679"
+         height="52.834682"
+         x="26.016598"
+         y="14.514174" />
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#4f4f4f;stroke-width:9.16532;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2850-6"
+         width="52.834679"
+         height="52.834682"
+         x="21.867496"
+         y="18.768063" />
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#38393a;stroke-width:9.16532;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2850"
+         width="52.834679"
+         height="52.834682"
+         x="17.046953"
+         y="23.690485" />
+    </g>
+  </g>
+</svg>
